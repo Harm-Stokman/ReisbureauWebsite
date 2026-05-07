@@ -3,7 +3,7 @@
 # image keyword verwijderd: dus altijd een build
 # php versie 8.0 -> 8.4
 # mysql versie 5.7 -> lts (8.x)
-name: webapp
+name: webapp2
 services:
   web:
     container_name: php_web
