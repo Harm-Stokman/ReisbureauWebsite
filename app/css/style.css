@@ -9,4 +9,17 @@
 
 body {
     background: var(--background);
+    margin: auto;
+}
+
+header {
+    background: var(--dark_red);
+    border-radius: 0 0 20px 20px;
+    height: 120px;
+
+}
+
+header img {    /* put image in center */
+    height: auto;
+    width: 80px;
 }
