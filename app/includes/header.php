@@ -8,7 +8,7 @@
     </nav>
 </div>
 <div class="buttons">
-    <a></a>
-    <a></a>
-    <a></a>
+    <a>test</a>
+    <a>test</a>
+    <a>test</a>
 </div>

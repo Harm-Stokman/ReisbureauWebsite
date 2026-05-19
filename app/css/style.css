@@ -15,11 +15,14 @@ body {
 header {
     background: var(--dark_red);
     border-radius: 0 0 20px 20px;
-    height: 120px;
-
+    height: auto;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
 }
 
 header img {    /* put image in center */
     height: auto;
     width: 80px;
 }
+
