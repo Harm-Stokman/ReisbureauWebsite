@@ -8,7 +8,7 @@
     </nav>
 </div>
 <div class="buttons">
-    <a>test</a>
-    <a>test</a>
-    <a>test</a>
+    <a>Login</a>
+    <a>Contact</a>
+    <a>Admin</a>
 </div>
