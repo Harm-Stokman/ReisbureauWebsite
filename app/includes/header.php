@@ -8,7 +8,7 @@
     </nav>
 </div>
 <div class="buttons">
-    <a>Login</a>
-    <a>Contact</a>
-    <a>Admin</a>
+    <a href="">Login</a>
+    <a href="">Contact</a>
+    <a href="">Admin</a>
 </div>

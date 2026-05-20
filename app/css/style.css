@@ -1,7 +1,7 @@
 
 :root {
     --background: #FFFCF7;
-    --sand: kaas;
+    --sand: #FFF0D6;
     --dark_red: #90141E;
     --red: #D4212A;
     --dark_blue: #0B3F5B;
@@ -14,6 +14,9 @@ body {
     font-family: noto-sans, sans-serif;
 }
 
+/* ======================================================================================= */
+/* =====================================   Header   ====================================== */
+/* ======================================================================================= */
 header {
     background: var(--dark_red);
     border: 10px solid var(--dark_red);
@@ -34,12 +37,18 @@ header img {    /* put image in center */
 }
 
 header ul {
+    margin: 50px;
     list-style: none;
+    gap: 50px;
+    display: flex;
+	justify-content: space-around;
+	align-items: center;
+    font-size: 18px;
 }
 
 header a {
+    color: var(--background);
     text-decoration: none;
-    color: kaas;
 }
 
 .buttons {
