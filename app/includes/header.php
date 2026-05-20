@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header-links">
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
@@ -8,7 +8,7 @@
     </nav>
 </div>
 <div class="buttons">
-    <a href="">Login</a>
-    <a href="">Contact</a>
-    <a href="">Admin</a>
+    <a href="inlog.php">Login</a>
+    <a href="contact.php">Contact</a>
+    <a href="admin.php">Admin</a>
 </div>

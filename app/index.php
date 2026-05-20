@@ -26,8 +26,19 @@ include_once 'includes/pdo.php';
 
     </header>
 
+
+
+    <main>
+
+    </main>
+
+
+
     <footer>
         
+    <?php
+    include_once 'includes/footer.php';
+    ?>
     </footer>
 
 </body>

@@ -6,7 +6,7 @@
 name: webapp2
 services:
   web:
-    container_name: php_web
+    container_name: php_web2
     build:
       context: .
       # pipe symbol op volgende regel laten staan!!!
@@ -25,7 +25,7 @@ services:
     # Bart beun oplossing voor MAC OS
     # platform: linux/x86_64
     image: mysql:lts
-    container_name: mysql_db
+    container_name: mysql_db2
     restart: always
     environment:
     # de HOSTNAME is gelijk aan de servicenaam: "db" 
@@ -39,7 +39,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin
-    container_name: phpmyadmin
+    container_name: phpmyadmin2
     restart: always
     ports:
       - "8081:80"
