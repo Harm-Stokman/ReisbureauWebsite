@@ -71,6 +71,7 @@ header a {
     align-items: center;
 }
 
+<<<<<<< HEAD
 
 
 /* ======================================================================================= */
@@ -121,3 +122,29 @@ footer p {
     color: lightgray;
     font-size: 10px;
 }
+=======
+.travels {
+    border: 2px solid var(--dark_red);
+}
+
+.admin-block {
+    background: var(--teal);
+    height: auto;
+    width: 300px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-block img {
+    max-width: 180px;
+    max-height: 80px;
+}
+
+.admin-actions {
+    display: flex;
+    flex-direction: column;
+}
+>>>>>>> eaf042a0e4c1dad92d671b7f79e45c24146ce05f
