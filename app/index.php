@@ -15,6 +15,7 @@ include_once 'includes/pdo.php';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <header>
@@ -29,7 +30,27 @@ include_once 'includes/pdo.php';
 
 
     <main>
-
+        <div class="index-header">
+            <div>
+                <div class="title">
+                    <h2>Vind jou vakantie</h2>
+                </div>
+                <div class="find-vacations">
+                    <select class="dropdown-selection" name="type">
+                        <option value="">Type vakantie</option>
+                        <option value="Strand-en-zon">Strand en zon</option>
+                    </select>
+                    <select class="dropdown-selection" name="continent">
+                        <option value="">Continent</option>
+                        <option value="asia">Azië</option>
+                    </select>
+                    <div class="search-button">
+                        <a href="index.php">Zoeken</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </main>
 
 
