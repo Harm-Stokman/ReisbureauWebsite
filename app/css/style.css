@@ -82,6 +82,7 @@ header a {
     align-items: center;
 }
 
+<<<<<<< Updated upstream
 header a:hover {
     color: var(--sand);
 }
@@ -168,6 +169,8 @@ header a:hover {
     flex-direction: column;
 }
 
+=======
+>>>>>>> Stashed changes
 
 
 /* ======================================================================================= */
@@ -182,8 +185,12 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+<<<<<<< Updated upstream
     position: relative;
     z-index: 2;
+=======
+    margin-top: 30px;
+>>>>>>> Stashed changes
 }
 
 .footer {
@@ -220,3 +227,116 @@ footer p {
     color: lightgray;
     font-size: 10px;
 }
+<<<<<<< Updated upstream
+=======
+
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+
+.title-block {
+    background: var(--dark_red);
+    padding: 10px;
+    color: white;
+    border-radius: 15px;
+    max-width: 200px;
+    font-size: 25px;
+}
+
+.admin-page {
+    margin-top: 50px;
+    justify-items: center;
+    text-align: center;
+}
+
+.admin-field {
+    border: 2px solid var(--dark_red);
+    height: 400px;
+    padding: 30px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    overflow-y: auto;
+    gap: 15px;
+}
+
+.admin-block {
+    background: var(--teal);
+    height: 100px;
+    width: 350px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
+.admin-block img {
+    max-width: 180px;
+    max-height: 80px;
+    border-radius: 10px;
+}
+
+.travel-info {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.travel-names {
+    font-size: 25px;
+    align-content: center;
+}
+
+.admin-actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-actions button {
+    height: 50px;
+    width: 60px;
+    border: none;
+    color: white;
+    font-size: 17px;
+}
+
+.admin-actions button:hover {
+    cursor: pointer;
+    
+}
+
+.button-top {
+    border-radius: 0px 15px 0px 0px;
+    background: var(--dark_blue);
+}
+
+.button-bottom {
+    border-radius: 0px 0px 15px 0px;
+    background: var(--dark_red);
+}
+
+.action-button {
+    background: var(--dark_blue);
+    color: white;
+    border: none;
+    height: 40px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.action-button:hover {
+    cursor: pointer;
+}
+
+.admin-booking-block {
+    background: var(--teal);
+    border-radius: 15px;
+}
+>>>>>>> Stashed changes
