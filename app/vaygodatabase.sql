@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Gegenereerd op: 21 mei 2026 om 11:48
+-- Gegenereerd op: 21 mei 2026 om 12:10
 -- Serverversie: 8.4.8
 -- PHP-versie: 8.3.30
 
@@ -93,9 +93,9 @@ CREATE TABLE `Reizen` (
 
 INSERT INTO `Reizen` (`Reis-id`, `Bestemming`, `Land`, `korte-beschrijving`, `Prijs`, `Vlag`, `Continent`, `Strand-en-zon`, `Stedentrip`, `Wintersport`, `Natuur`, `Cultuur`, `Welkom-bericht`, `Historie`, `Wat-te-doen`, `Achtergrond`) VALUES
 (1, 'Willemstad', 'Curaçao', 'Willemstad is een stad in Curaçao', 950, 'Curacao.png', 'Noord-Amerika', 1, 0, 0, 0, 0, 'Welkom in Willemstad', 'historie', 'wat te doen', 'willemstad.png'),
-(2, 'Ibiza', 'Spanje', 'Ibiza is een gebied in Spanje', 240, 'Spanje.png', 'Europa', 1, 0, 0, 0, 0, 'Welkom in Ibiza!', 'historie', 'wat te doen', 'geen'),
-(3, 'Lissabon', 'Portugal', 'Lissabon is een stad in Portugal', 345, 'Portugal.png', 'Europa', 1, 1, 0, 0, 0, 'Welkom in Lissabon!', 'historie', 'wat te doen', 'geen'),
-(4, 'Tokyo', 'Japan', 'Tokyo is een stad in japan', 1100, 'Japan.png', 'Azië', 0, 1, 0, 0, 0, 'Welkom in Tokyo', 'historie', 'wat te doen', 'geen');
+(2, 'Ibiza', 'Spanje', 'Ibiza is een gebied in Spanje', 240, 'Spanje.png', 'Europa', 1, 0, 0, 0, 0, 'Welkom in Ibiza!', 'historie', 'wat te doen', 'ibiza.png'),
+(3, 'Lissabon', 'Portugal', 'Lissabon is een stad in Portugal', 345, 'Portugal.png', 'Europa', 1, 1, 0, 0, 0, 'Welkom in Lissabon!', 'historie', 'wat te doen', 'lissabon.png'),
+(4, 'Tokyo', 'Japan', 'Tokyo is een stad in japan', 1100, 'Japan.png', 'Azië', 0, 1, 0, 0, 0, 'Welkom in Tokyo', 'historie', 'wat te doen', 'Tokyo.png');
 
 --
 -- Indexen voor geëxporteerde tabellen
