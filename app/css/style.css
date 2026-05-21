@@ -230,6 +230,7 @@ footer p {
 <<<<<<< Updated upstream
 =======
 
+.admin-section {
     justify-items: center;
     display: flex;
     flex-direction: column;
