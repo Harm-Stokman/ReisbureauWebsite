@@ -30,16 +30,16 @@
                 </span>
             <form class="userform">
                 <div class="input-field">
-                    <input class="form-input" type="text" name="username" placeholder="Gebruikersnaam">
-                    <input class="form-input" type="text" name="password" placeholder="Wachtwoord">
+                    <input type="text" name="username" placeholder="Gebruikersnaam">
+                    <input type="password" name="password" placeholder="Wachtwoord">
                 </div>
                  <input class="action-button" type="submit" name="submit" value="Login">
             </form>
-            <div class="sign-up">
+            <div class="form-alt">
                 <span>
                     Geen account?
                 </span>
-                <a href="signup.php"><button>Sign up</button></a>
+                <a href="signup.php"><button>Aanmelden</button></a>
             </div>
         </div>
     </main>

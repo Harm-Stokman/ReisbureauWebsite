@@ -310,7 +310,7 @@ header a:hover {
     border: none;
     font-size:20px;
     border-radius: 25px;
-    padding: 0px 0px 0px 5px;
+    padding: 0px 0px 0px 10px;
 }
 
 .userform div {
@@ -319,7 +319,7 @@ header a:hover {
     gap: 30px;
 }
 
-.sign-up {
+.form-alt {
     font-size: 20px;
     display: flex;
     flex-direction: column;
@@ -327,7 +327,7 @@ header a:hover {
     text-align: center;
 }
 
-.sign-up button {
+.form-alt button {
     background: var(--red);
     padding: 5px;
     color: var(--sand);
@@ -337,7 +337,7 @@ header a:hover {
     border-radius: 15px;
 }
 
-.sign-up button:hover {
+.form-alt button:hover {
     background: var(--dark_red);
     cursor: pointer;
 }
