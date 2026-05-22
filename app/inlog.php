@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -16,22 +23,26 @@
         ?>
 
     </header>
-
-
-
     <main>
-
+        <div class="user-actions">
+            <span class="title-block">
+                    Inloggen
+                </span>
+            <form class="userform">
+                <div class="input-field">
+                    <input class="form-input" type="text" name="username" placeholder="Gebruikersnaam">
+                    <input class="form-input" type="text" name="password" placeholder="Wachtwoord">
+                </div>
+                 <input class="action-button" type="submit" name="submit" value="Login">
+            </form>
+            <div class="sign-up">
+                <span>
+                    Geen account?
+                </span>
+                <a href="signup.php"><button>Sign up</button></a>
+            </div>
+        </div>
     </main>
-
-
-
-    <footer>
-        
-    <?php
-    include_once 'includes/footer.php';
-    ?>
-    </footer>
-
 </body>
 
 </html>
