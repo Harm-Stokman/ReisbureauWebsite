@@ -32,9 +32,7 @@ include_once 'includes/pdo.php';
     <main>
         <div class="index-header">
             <div>
-                <div class="title">
-                    <h2>Vind jou vakantie</h2>
-                </div>
+                <span class="title-block">Vind jou vakantie</span>
                 <div class="find-vacations">
                     <select class="dropdown-selection" name="type">
                         <option value="">Type vakantie</option>
@@ -45,12 +43,34 @@ include_once 'includes/pdo.php';
                         <option value="asia">Azië</option>
                     </select>
                     <div class="search-button">
-                        <a href="index.php">Zoeken</a>
+                        <a href="index.php">Zoeken</a>  <!-- Voor nu -->
                     </div>
                 </div>
             </div>
         </div>
-        
+        <div class="destinations-index">
+            <span class="title-block">Vind uw bestemming</span>
+            <div class="one-destination">
+                <!-- Image en label -->
+                <div>
+                    <div class="index-label"></div>
+                    <img src="" alt="">
+                </div>
+                <!-- Title betemming en korte info -->
+                <div>
+                    <div>
+                        <div></div>
+                        <p></p>
+                    </div>
+                    <!-- Vlag en prijs button -->
+                    <div>
+                        <img src="" alt="">
+                        <a href=""></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </main>
 
 
