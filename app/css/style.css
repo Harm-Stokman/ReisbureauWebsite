@@ -101,14 +101,26 @@ header a:hover {
     min-height: 600px;
     margin-top: -50px;
     position: relative;
+    text-align: center;
     /* truckje om content in midden te zetten */
     display: grid;
     place-items: center;
 }
 
-.find-vacations {
+.title-block {
+    background: var(--dark_red);
+    padding: 10px;
+    color: var(--sand);
+    border-radius: 10px;
+    max-width: 250px;
+    font-size: 25px;
     position: relative;
     z-index: 2;
+}
+
+.find-vacations {
+    position: relative;
+    z-index: 1;
     background: var(--red);
     width: 500px;
     height: 75px;
@@ -136,6 +148,41 @@ header a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.search-button a:hover {
+    background: var(--dark_red);
+    color: var(--sand);
+}
+
+/* ==================================================================== */
+.destinations-index {
+    background: var(--sand);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.index-label {
+    background: var(--red);
+    height: 25px;
+    max-width: 125px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--background);
+}
+
+.one-destination {
+    background: var(--background);
+    padding: 10px;
+}
+
+.one-destination img {
+    position: relative;
 }
 
 
@@ -175,15 +222,6 @@ header a:hover {
     gap: 30px;
     align-items: center;
     margin-bottom: 50px;
-}
-
-.title-block {
-    background: var(--dark_red);
-    padding: 10px;
-    color: var(--sand);
-    border-radius: 15px;
-    max-width: 200px;
-    font-size: 25px;
 }
 
 .admin-page {
@@ -280,7 +318,7 @@ header a:hover {
 }
 
 /* ======================================================================================= */
-/* =====================================   Login   ====================================== */
+/* =====================================   LOGIN   ====================================== */
 /* ======================================================================================= */
 
 .user-actions {
