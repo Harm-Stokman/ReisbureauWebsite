@@ -52,20 +52,20 @@ include_once 'includes/pdo.php';
             <span class="title-block">Vind uw bestemming</span>
             <div class="one-destination">
                 <!-- Image en label -->
-                <div>
-                    <div class="index-label"></div>
-                    <img src="" alt="">
+                <div class="image-label">
+                    <div class="index-label">Strand en zon</div>
+                    <img src="img/willemstad.png" alt="Bestemming image">
                 </div>
                 <!-- Title betemming en korte info -->
-                <div>
-                    <div>
-                        <div></div>
-                        <p></p>
+                <div class="info-bestemming">
+                    <div class="text-info-bestemming">
+                        <div class="titel-bestemming">Willemstad, Curacao</div>
+                        <p>Info</p>
                     </div>
                     <!-- Vlag en prijs button -->
-                    <div>
-                        <img src="" alt="">
-                        <a href=""></a>
+                    <div class="vlag-prijs">
+                        <img src="img/Curacao.png" alt="vlag image">
+                        <a href="">Nu vanaf $3000,- pp</a>
                     </div>
                 </div>
 

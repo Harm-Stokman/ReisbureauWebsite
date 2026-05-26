@@ -155,7 +155,92 @@ header a:hover {
     color: var(--sand);
 }
 
-/* ==================================================================== */
+/* =================================================================== */
+
+.one-destination {
+    border: 5px dashed red;
+
+    background: var(--background);
+    padding: 5px;
+    gap: 10px;
+}
+
+
+
+.image-label {
+    border: 2px dashed blue;
+}
+
+.image-label img {
+    position: relative;
+    width: 450px;
+    height: auto;
+}
+
+
+.info-bestemming {
+    border: 2px dashed goldenrod;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+
+.text-info-bestemming {
+    border: 2px dashed green;
+
+    padding: 10px;
+}
+
+.text-info-bestemming p {
+    color: var(--gunpowder);
+    font-size: 14px;
+}
+
+.titel-bestemming {
+    background: var(--dark_blue);
+    color: var(--background);
+    padding: 5px;
+    border-radius: 25px;
+    font-size: 22px;
+}
+
+
+.vlag-prijs {
+    border: 2px dashed purple;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.vlag-prijs img {
+    width: 100px;
+    height: auto;
+}
+
+.vlag-prijs a {
+    background: var(--dark_red);
+    padding: 7px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: var(--sand);
+    max-width: 150px;
+}
+
+.vlag-prijs a:hover {
+    color: var(--background);
+    background: var(--red);
+}
+
+
+
+
+
 .destinations-index {
     background: var(--sand);
     display: flex;
@@ -167,22 +252,13 @@ header a:hover {
 
 .index-label {
     background: var(--red);
-    height: 25px;
     max-width: 125px;
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--background);
-}
-
-.one-destination {
-    background: var(--background);
-    padding: 10px;
-}
-
-.one-destination img {
-    position: relative;
+    padding: 5px;
 }
 
 
