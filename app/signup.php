@@ -1,3 +1,9 @@
+<?php
+
+include_once 'includes/pdo.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +32,7 @@
             Aanmelden
         </span>
         <form class="userform">
-            <div class="input-field">
+            <div>
             <input type="text" name="username" placeholder="Uw gebruikersnaam">
             <input type="email" name="email" placeholder="Uw E-mailadres">
             <input type="password" name="password" placeholder="Wachtwoord">
