@@ -394,6 +394,11 @@ header a:hover {
     border-radius: 15px;
 }
 
+.booking-card {
+    background: var(--teal);
+    display: flex;
+}
+
 /* ======================================================================================= */
 /* =====================================   LOGIN   ====================================== */
 /* ======================================================================================= */
@@ -425,7 +430,9 @@ header a:hover {
     gap: 30px;
 }
 
-.userform div input, textarea, select {
+.userform div input,
+textarea,
+select {
     background: var(--background);
     color: var(--gunpowder);
     border: 2px solid var(--gunpowder);
@@ -449,7 +456,7 @@ header a:hover {
 
 .userform div select {
     height: 40px;
-    font-size: 20px;    
+    font-size: 20px;
 }
 
 .form-alt {
@@ -476,6 +483,26 @@ header a:hover {
 }
 
 
+/* ======================================================================================= */
+/* =====================================   USER   ====================================== */
+/* ======================================================================================= */
+
+.user-box {
+    border: 2px solid var(--gunpowder);
+    display: flex;
+    border-radius: 15px;
+    font-size: 25px;
+    height: 100px;
+    width: 600px;
+    text-align: left;
+    padding: 10px;
+}
+
+.user-box div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
 /* ======================================================================================= */
 /* =====================================   FOOTER   ====================================== */
