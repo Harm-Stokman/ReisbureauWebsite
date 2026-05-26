@@ -1,3 +1,8 @@
+<?php
+
+include_once 'includes/pdo.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +34,7 @@
                     Inloggen
                 </span>
             <form class="userform">
-                <div class="input-field">
+                <div>
                     <input type="text" name="username" placeholder="Gebruikersnaam">
                     <input type="password" name="password" placeholder="Wachtwoord">
                 </div>
