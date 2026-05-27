@@ -95,18 +95,25 @@ include_once 'includes/pdo.php';
             <span class="title-block">Reviews</span>
             <div class="one-review">
                 <div class="review-header">
-                    <div class="username">Erik Bakker</div>
-                    <div class="review">5/5</div>
+                    <div class="review-info">
+                        <span>Erik Bakker</span>
+                        <span>Review over Tokyo, Japan</span>
+                    </div>
+                    <span>5/5</span>
                 </div>
                 <p>Ik ging naar Japan met Vaygo. Wat een tyfus. Ik ga morgen weer.</p>
             </div>
             <div class="one-review">
                 <div class="review-header">
-                    <div class="username">Harm</div>
-                    <div class="review">0/5</div>
+                    <div class="review-info">
+                        <span>Harm</span>
+                        <span>Review over Lissabon, Portugal</span>
+                    </div>
+                    <span>1/5</span>
                 </div>
-                <p>Kanker Vaygo.</p>
+                <p>kanker</p>
             </div>
+            <a href="allreviews.php"><button class="action-button">Zie alle reviews</button></a>
         </div>
     </main>
 
