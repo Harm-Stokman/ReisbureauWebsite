@@ -50,25 +50,62 @@ include_once 'includes/pdo.php';
         </div>
         <div class="destinations-index">
             <span class="title-block">Vind uw bestemming</span>
-            <div class="one-destination">
-                <!-- Image en label -->
-                <div class="image-label">
-                    <div class="index-label">Strand en zon</div>
-                    <img src="img/willemstad.png" alt="Bestemming image">
-                </div>
-                <!-- Title betemming en korte info -->
-                <div class="info-bestemming">
-                    <div class="text-info-bestemming">
-                        <div class="titel-bestemming">Willemstad, Curacao</div>
-                        <p>Info</p>
+            <div class="destinations-flex">
+                <div class="one-destination">
+                    <!-- Image en label -->
+                    <div class="image-label">
+                        <div class="index-label">Strand en zon</div>
+                        <img src="img/willemstad-card.png" alt="Bestemming image">
                     </div>
-                    <!-- Vlag en prijs button -->
-                    <div class="vlag-prijs">
-                        <img src="img/Curacao.png" alt="vlag image">
-                        <a href="">Nu vanaf $3000,- pp</a>
+                    <!-- Title betemming en korte info -->
+                    <div class="info-bestemming">
+                        <div class="text-info-bestemming">
+                            <div class="titel-bestemming">Willemstad, Curacao</div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non tempore, ex reprehenderit, minima dicta exercitationem minus sunt aperiam reiciendis officiis consequatur deleniti perferendis accusamus architecto quisquam vitae autem velit quae.</p>
+                        </div>
+                        <!-- Vlag en prijs button -->
+                        <div class="vlag-prijs">
+                            <img src="img/Curacao.png" alt="vlag image">
+                            <a href="">Nu vanaf $3000,- pp</a>
+                        </div>
                     </div>
                 </div>
-
+                <div class="one-destination">
+                    <!-- Image en label -->
+                    <div class="image-label">
+                        <div class="index-label">Strand en zon</div>
+                        <img src="img/willemstad-card.png" alt="Bestemming image">
+                    </div>
+                    <!-- Title betemming en korte info -->
+                    <div class="info-bestemming">
+                        <div class="text-info-bestemming">
+                            <div class="titel-bestemming">Willemstad, Curacao</div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non tempore, ex reprehenderit, minima dicta exercitationem minus sunt aperiam reiciendis officiis consequatur deleniti perferendis accusamus architecto quisquam vitae autem velit quae.</p>
+                        </div>
+                        <!-- Vlag en prijs button -->
+                        <div class="vlag-prijs">
+                            <img src="img/Curacao.png" alt="vlag image">
+                            <a href="">Nu vanaf $3000,- pp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="reviews-index">
+            <span class="title-block">Reviews</span>
+            <div class="one-review">
+                <div class="review-header">
+                    <div class="username">Erik Bakker</div>
+                    <div class="review">5/5</div>
+                </div>
+                <p>Ik ging naar Japan met Vaygo. Wat een tyfus. Ik ga morgen weer.</p>
+            </div>
+            <div class="one-review">
+                <div class="review-header">
+                    <div class="username">Harm</div>
+                    <div class="review">0/5</div>
+                </div>
+                <p>Kanker Vaygo.</p>
             </div>
         </div>
     </main>
