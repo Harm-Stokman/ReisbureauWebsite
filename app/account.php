@@ -1,9 +1,21 @@
+<?php
+
+include_once 'includes/pdo.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Uw Account</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -20,18 +32,28 @@
 
 
     <main>
-
+        <div class="admin-page">
+            <h1>Accountinformatie</h1>
+            <div class="user-box">
+                <div>
+                    <span>Gebruikersnaam:</span>
+                    <span>E-Mailadres:</span>
+                </div>
+            </div>
+            <h1>Uw boekingen</h1>
+            <div class="admin-field">
+                <div class="admin-booking-block">
+                        <div class="booking-info">
+                            <span>Locatie:</span>
+                            <span>Op naam van:</span>
+                            <span>Aantal personen:</span>
+                            <span>Duur: ... tot ...</span>
+                        </div>
+                        <a href="account.php"><button class="delete-button">X</button></a>
+                    </div>
+            </div>
+        </div>
     </main>
-
-
-
-    <footer>
-        
-    <?php
-    include_once 'includes/footer.php';
-    ?>
-    </footer>
-
 </body>
 
 </html>
