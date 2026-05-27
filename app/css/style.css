@@ -254,9 +254,12 @@ header a:hover {
 .review-header {
     display: flex;
     justify-content: space-between;
+    font-weight: bolder;
+    color: var(--gunpowder);
 }
 
 .reviews-index {
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -267,21 +270,18 @@ header a:hover {
 .one-review {
     width: 400px;
     text-align: justify;
+    border-bottom: 1px solid var(--dark_blue);
 }
 
 .one-review p {
     color: gray;
 }
 
-.review {
-    font-weight: bolder;
-    color: var(--gunpowder);
+.review-info {
+    display: flex;
+    flex-direction: column;
 }
 
-.username {
-    font-weight: bolder;
-    color: var(--gunpowder);
-}
 
 
 
@@ -436,7 +436,6 @@ header a:hover {
 
 .admin-actions button:hover {
     cursor: pointer;
-
 }
 
 .button-top {
@@ -450,8 +449,8 @@ header a:hover {
 }
 
 .action-button {
+    color: var(--background);
     background: var(--dark_blue);
-    color: var(--sand);
     border: none;
     min-width: 200px;
     height: 40px;
@@ -462,6 +461,7 @@ header a:hover {
 
 .action-button:hover {
     cursor: pointer;
+    background: var(--dark_red);
 }
 
 .admin-booking-block {
