@@ -74,9 +74,17 @@ include_once 'includes/pdo.php';
 
                     $boekingen = $searchStatement->fetchAll();
 
-                
-                    
                     ?>
+
+                    <div class="admin-booking-block">
+                        <div class="booking-info">
+                            <span>Locatie:</span>
+                            <span>Op naam van:</span>
+                            <span>Aantal personen:</span>
+                            <span>Duur: ... tot ...</span>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>

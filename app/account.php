@@ -42,7 +42,15 @@ include_once 'includes/pdo.php';
             </div>
             <h1>Uw boekingen</h1>
             <div class="admin-field">
-                
+                <div class="admin-booking-block">
+                        <div class="booking-info">
+                            <span>Locatie:</span>
+                            <span>Op naam van:</span>
+                            <span>Aantal personen:</span>
+                            <span>Duur: ... tot ...</span>
+                        </div>
+                        <a href="account.php"><button class="delete-button">X</button></a>
+                    </div>
             </div>
         </div>
     </main>
