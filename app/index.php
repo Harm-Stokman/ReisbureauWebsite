@@ -91,20 +91,22 @@ include_once 'includes/pdo.php';
                     <div class="one-destination">
                         <!-- Image en label -->
                         <div class="image-label">
-                            <div class="index-label">
+                            <div class="label-box">
                                 <?php
                                     if ($reis['Strand-en-zon'] == 1) {
-                                        echo "Strand en zon";
-                                    } elseif ($reis['Stedentrip'] == 1) {
-                                        echo "Stedentrip";
-                                    } elseif ($reis['Wintersport'] == 1) {
-                                        echo "Wintersport";
-                                    } elseif ($reis['Natuur'] == 1) {
-                                        echo "Natuur";
-                                    } elseif ($reis['Cultuur'] == 1) {
-                                        echo "Cultuur";
-                                    } else {
-                                        // do nothing
+                                        echo "<div class='index-label'>Strand en zon</div>";
+                                    }
+                                    if ($reis['Stedentrip'] == 1) {
+                                        echo "<div class='index-label'>Stedentrip</div>";
+                                    }
+                                    if ($reis['Wintersport'] == 1) {
+                                        echo "<div class='index-label'>Wintersport</div>";
+                                    }
+                                    if ($reis['Natuur'] == 1) {
+                                        echo "<div class='index-label'>Natuur</div>";
+                                    }
+                                    if ($reis['Cultuur'] == 1) {
+                                        echo "<div class='index-label'>Cultuur</div>";
                                     }
                                 ?>
                             </div>
