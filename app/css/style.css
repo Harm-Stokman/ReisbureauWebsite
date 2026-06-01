@@ -161,6 +161,8 @@ header a:hover {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
+    background: var(--sand);
+    margin-bottom: 30px;
 }
 
 .one-destination {

@@ -68,7 +68,7 @@ include_once 'includes/pdo.php';
 
                     //  Show alles van burgers tenzij hij leeg is.
                     //  Define SQL statement
-                    $sql = "SELECT * FROM Reizen";
+                    $sql = "SELECT * FROM Reizen LIMIT 4";
 
                     //  Prepare SQL statement
                     $statement = $pdo->prepare($sql);
@@ -78,13 +78,12 @@ include_once 'includes/pdo.php';
 
                     $reizen = $statement->fetchAll();
 
-                    foreach($reizen as $reis) { ?>
+                    foreach($reizen as $reis) {
 
-                    <?php
+                        // $i = 1;
 
-                        //$i = 1;
-                        //while ($i <= 6) {
-                        //    $i = $i + 1;
+                        // if ($i <= 3) {  
+                        //     break;
                             
                     ?>
                     
@@ -126,7 +125,10 @@ include_once 'includes/pdo.php';
                         </div>
                     </div>
                     
-                    <?php //} ?>
+                    <?php
+                        // $i = $i + 1;
+                        // }
+                    ?>
 
                 <?php } ?>
 
@@ -153,7 +155,7 @@ include_once 'includes/pdo.php';
                     </div>
                     <span>1/5</span>
                 </div>
-                <p>kanker</p>
+                <p>Kut</p>
             </div>
             <a href="allreviews.php"><button class="action-button">Zie alle reviews</button></a>
         </div>
