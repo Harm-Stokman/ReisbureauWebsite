@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 include_once 'includes/pdo.php';
 
 ?>
@@ -137,7 +137,29 @@ include_once 'includes/pdo.php';
 
         <div class="reviews-index">
             <span class="title-block">Reviews</span>
-            <div class="one-review">
+
+            <?php 
+            
+            $sqlreview = "SELECT * FROM recensies";
+            $reviewstatement = $pdo->prepare($sqlreview);
+            $reviewstatement->execute();
+            $reviews = $reviewstatement->fetchAll();
+
+
+            foreach ($reviews as $review) { ?>
+                <div class="one-review">
+                <div class="review-header">
+                    <div class="review-info">
+                        <span><?php echo $review['User-id']; ?> </span>
+                        <span>Review over de reis naar <?php echo $review['Reis-id'];?></span>
+                    </div>
+                    <span><?php echo $review['Beoordeling'] ?> / 5</span>
+                </div>
+                <p><?php echo $review['Bericht'] ?></p>
+            </div>
+           <?php } ?>
+
+            <!-- <div class="one-review">
                 <div class="review-header">
                     <div class="review-info">
                         <span>Erik Bakker</span>
@@ -156,7 +178,7 @@ include_once 'includes/pdo.php';
                     <span>1/5</span>
                 </div>
                 <p>Kut</p>
-            </div>
+            </div> -->
             <a href="allreviews.php"><button class="action-button">Zie alle reviews</button></a>
         </div>
     </main>
