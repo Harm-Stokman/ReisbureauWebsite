@@ -24,7 +24,7 @@ try {
 //  Foutmelding
     echo $e->getMessage();
 //  Stop (die)
-    die("Sorry. database probleem");
+    // die("Sorry. database probleem");
 }
 
 ?>

@@ -1,3 +1,10 @@
+<?php 
+
+session_start();
+include_once 'includes/pdo.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
