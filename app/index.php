@@ -26,9 +26,6 @@ include_once 'includes/pdo.php';
         ?>
 
     </header>
-
-
-
     <main>
         <div class="index-header">
             <div>
@@ -158,27 +155,6 @@ include_once 'includes/pdo.php';
                 <p><?php echo $review['Bericht'] ?></p>
             </div>
            <?php } ?>
-
-            <!-- <div class="one-review">
-                <div class="review-header">
-                    <div class="review-info">
-                        <span>Erik Bakker</span>
-                        <span>Review over Tokyo, Japan</span>
-                    </div>
-                    <span>5/5</span>
-                </div>
-                <p>Ik ging naar Japan met Vaygo. Wat een tyfus. Ik ga morgen weer.</p>
-            </div>
-            <div class="one-review">
-                <div class="review-header">
-                    <div class="review-info">
-                        <span>Harm</span>
-                        <span>Review over Lissabon, Portugal</span>
-                    </div>
-                    <span>1/5</span>
-                </div>
-                <p>Kut</p>
-            </div> -->
             <a href="allreviews.php"><button class="action-button">Zie alle reviews</button></a>
         </div>
     </main>
