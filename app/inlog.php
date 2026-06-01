@@ -1,6 +1,29 @@
 <?php
-
+session_start();
 include_once 'includes/pdo.php';
+
+if (isset($_POST['submit'])) {
+    if (isset($_POST['username']) && isset($_POST['password'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $query = "SELECT * FROM Gebruikers 
+        WHERE Gebruikersnaam = ?";
+
+        $userstatement = $pdo->prepare($query);
+        $userstatement->bindParam(1, $username);
+        $userstatement->execute();
+        $user = $userstatement->fetch();
+
+        if ($userstatement->rowCount() > 0) {
+            if ($username == $user['Gebruikersnaam'] && $password == $user['Wachtwoord']) {
+                $_SESSION['user-id'] = $user['User-id'];
+                $_SESSION['logged-in'] = true;
+                 header('Location: index.php');
+            }
+        } echo "Verkeerde gegevens";
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -31,14 +54,14 @@ include_once 'includes/pdo.php';
     <main>
         <div class="user-actions">
             <span class="title-block">
-                    Inloggen
-                </span>
-            <form class="userform">
+                Inloggen
+            </span>
+            <form class="userform" method="post">
                 <div>
                     <input type="text" name="username" placeholder="Gebruikersnaam">
                     <input type="password" name="password" placeholder="Wachtwoord">
                 </div>
-                 <input class="action-button" type="submit" name="submit" value="Login">
+                <input class="action-button" type="submit" name="submit" value="Login">
             </form>
             <div class="form-alt">
                 <span>

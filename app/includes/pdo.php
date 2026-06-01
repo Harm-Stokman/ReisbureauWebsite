@@ -19,12 +19,12 @@ try {
 //  Create the connection
     $pdo = new PDO($dsn, $user, $password, $opties);
 //  Succes melding
-    echo "Database connectie gelukt <br/>";
+    // echo "Database connectie gelukt <br/>";
 } catch (PDOException $e) {
 //  Foutmelding
     echo $e->getMessage();
 //  Stop (die)
-    die("Sorry. database probleem");
+    // die("Sorry. database probleem");
 }
 
 ?>
