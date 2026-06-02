@@ -58,8 +58,8 @@ if (isset($_POST['submit'])) {
             </span>
             <form class="userform" method="post">
                 <div>
-                    <input type="text" name="username" placeholder="Gebruikersnaam">
-                    <input type="password" name="password" placeholder="Wachtwoord">
+                    <input type="text" name="username" placeholder="Gebruikersnaam" require>
+                    <input type="password" name="password" placeholder="Wachtwoord" require>
                 </div>
                 <input class="action-button" type="submit" name="submit" value="Login">
             </form>
