@@ -3,18 +3,18 @@ session_start();
 include_once 'includes/pdo.php';
 
 if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] == true) {
-    if (isset($POST_['submit'])) {
+    if (isset($_POST['submit'])) {
 
-        $sql = "INSERT INTO recensies (User-id, Reis-id, Bericht, Beoordeling) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO recensies (`User-id`, `Reis-id`, `Bericht`, `Beoordeling`) VALUES (?, ?, ?, ?)";
 
         $reviewstatement = $pdo->prepare($sql);
 
-        $reviewstatement->bindParam(1, $SESSION_["user-id"]);
-        $reviewstatement->bindParam(2, $POST_["reis"]);
-        $reviewstatement->bindParam(3, $POST_["message"]);
-        $reviewstatement->bindParam(4, $POST_["beoordeling"]);
+        $reviewstatement->bindParam(1, $_POST["user"]);
+        $reviewstatement->bindParam(2, $_POST["reis"]);
+        $reviewstatement->bindParam(3, $_POST["bericht"]);
+        $reviewstatement->bindParam(4, $_POST["beoordeling"]);
         $reviewstatement->execute();
-
+        header('Location: allreviews.php');
     }
 } else {
     header('Location: inlog.php');
@@ -67,9 +67,10 @@ if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] == true) {
                         </option>
                     <?php } ?>
                 </select>
+                 <input type="hidden" name="user" value="<?php echo $_SESSION['user-id'];?>">
                 <input type="number" name="beoordeling" max="5" min="1">
                 <div>
-                    <textarea rows="1" name="message" placeholder="Uw review"></textarea>
+                    <textarea rows="1" name="bericht" placeholder="Uw review"></textarea>
                 </div>
                 <input class="action-button" type="submit" name="submit" value="Verzenden">
             </form>

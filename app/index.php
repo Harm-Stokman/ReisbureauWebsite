@@ -142,13 +142,31 @@ include_once 'includes/pdo.php';
             $reviewstatement->execute();
             $reviews = $reviewstatement->fetchAll();
 
+            
+            
 
             foreach ($reviews as $review) { ?>
+            <?php 
+
+            $sqluserreview = "SELECT * FROM Gebruikers WHERE `User-id` = ?";
+            $userreview = $pdo->prepare($sqluserreview);
+            $userreview->bindParam(1, $review['User-id']);
+            $userreview->execute();
+            $userreviewer = $userreview->fetch();
+
+            $sqlreisreview = "SELECT * FROM Reizen WHERE `Reis-id` = ?";
+            $reisreview = $pdo->prepare($sqlreisreview);
+            $reisreview->bindParam(1, $review['Reis-id']);
+            $reisreview->execute();
+            $reisreviewer = $reisreview->fetch();
+
+
+            ?>
                 <div class="one-review">
                 <div class="review-header">
                     <div class="review-info">
-                        <span><?php echo $review['User-id']; ?> </span>
-                        <span>Review over de reis naar <?php echo $review['Reis-id'];?></span>
+                        <span><?php echo  $userreviewer['Gebruikersnaam'] ?> </span>
+                        <span>Review over de reis naar <?php echo $reisreviewer['Bestemming'];?></span>
                     </div>
                     <span><?php echo $review['Beoordeling'] ?> / 5</span>
                 </div>
