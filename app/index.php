@@ -75,9 +75,9 @@ include_once 'includes/pdo.php';
 
                     $reizen = $statement->fetchAll();
 
-                    foreach($reizen as $reis) {
-
-                        // $i = 1;
+                    foreach($reizen as $reis) { ?>
+                    
+                    <?php
 
                         // if ($i <= 3) {  
                         //     break;
@@ -121,11 +121,6 @@ include_once 'includes/pdo.php';
                             </div>
                         </div>
                     </div>
-                    
-                    <?php
-                        // $i = $i + 1;
-                        // }
-                    ?>
 
                 <?php } ?>
 
