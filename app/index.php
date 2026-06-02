@@ -79,7 +79,7 @@ include_once 'includes/pdo.php';
                     $reizen = $statement->fetchAll();
 
                     foreach($reizen as $reis) { ?>
-
+                    
                     <?php
 
                         //$i = 1;
@@ -123,8 +123,6 @@ include_once 'includes/pdo.php';
                             </div>
                         </div>
                     </div>
-                    
-                    <?php //} ?>
 
                 <?php } ?>
 
