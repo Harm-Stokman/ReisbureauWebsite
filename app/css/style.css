@@ -161,6 +161,8 @@ header a:hover {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
+    background: var(--sand);
+    margin-bottom: 30px;
 }
 
 .one-destination {
@@ -207,12 +209,14 @@ header a:hover {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
 }
 
 .vlag-prijs img {
     width: 75px;
     height: auto;
+    border: 1px solid var(--gunpowder);
+    border-radius: 10px;
 }
 
 .vlag-prijs a {
@@ -238,6 +242,13 @@ header a:hover {
     gap: 20px;
 }
 
+.label-box {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    gap: 5px;
+}
+
 .index-label {
     background: var(--red);
     max-width: 125px;
@@ -247,9 +258,7 @@ header a:hover {
     align-items: center;
     gap: 20px;
     color: var(--background);
-    padding: 5px;
-    position: absolute;
-    z-index: 2;    
+    padding: 5px;  
 }
 
 .review-header {
@@ -641,9 +650,14 @@ select {
     padding: 10px;
 }
 
-.userform div select {
+.userform select {
     height: 40px;
     font-size: 20px;
+}
+
+.userform img {
+    height: 40px;
+    width: 40px;
 }
 
 .form-alt {

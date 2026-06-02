@@ -1,3 +1,8 @@
+<?php 
+session_start();
+include_once 'includes/pdo.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,29 +31,48 @@
 
 
     <main>
+        
  <div class="reviews-index">
             <span class="title-block">Alle reviews</span>
             <a href="review.php"><button class="action-button">Review schrijven?</button></a>
-            <div class="one-review">
+            <?php 
+            
+            $sqlreview = "SELECT * FROM recensies";
+            $reviewstatement = $pdo->prepare($sqlreview);
+            $reviewstatement->execute();
+            $reviews = $reviewstatement->fetchAll();
+
+            
+            
+
+            foreach ($reviews as $review) { ?>
+            <?php 
+
+            $sqluserreview = "SELECT * FROM Gebruikers WHERE `User-id` = ?";
+            $userreview = $pdo->prepare($sqluserreview);
+            $userreview->bindParam(1, $review['User-id']);
+            $userreview->execute();
+            $userreviewer = $userreview->fetch();
+
+            $sqlreisreview = "SELECT * FROM Reizen WHERE `Reis-id` = ?";
+            $reisreview = $pdo->prepare($sqlreisreview);
+            $reisreview->bindParam(1, $review['Reis-id']);
+            $reisreview->execute();
+            $reisreviewer = $reisreview->fetch();
+
+
+            ?>
+                <div class="one-review">
                 <div class="review-header">
                     <div class="review-info">
-                        <span>Erik Bakker</span>
-                        <span>Review over Tokyo, Japan</span>
+                        <span><?php echo  $userreviewer['Gebruikersnaam'] ?> </span>
+                        <span>Review over de reis naar <?php echo $reisreviewer['Bestemming'];?></span>
                     </div>
-                    <span>5/5</span>
+                    <span><?php echo $review['Beoordeling'] ?> / 5</span>
                 </div>
-                <p>Ik ging naar Japan met Vaygo. Wat een tyfus. Ik ga morgen weer.</p>
+                <p><?php echo $review['Bericht'] ?></p>
             </div>
-             <div class="one-review">
-                <div class="review-header">
-                    <div class="review-info">
-                        <span>Harm</span>
-                        <span>Review over Lissabon, Portugal</span>
-                    </div>
-                    <span>0/5</span>
-                </div>
-                <p>Kanker Vaygo</p>
-            </div>
+           <?php } ?>
         </div>
     </main>
 </body>

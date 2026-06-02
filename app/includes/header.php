@@ -8,7 +8,15 @@
     </nav>
 </div>
 <div class="buttons">
-    <a href="inlog.php">Login</a>
+    <?php 
+    
+    if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] = true) {
+        echo "<a href='logout.php'> Uitloggen </a>";
+    } else {
+       echo "<a href='inlog.php'>Login</a>";;
+    }
+    
+    ?>
     <a href="contact.php">Contact</a>
     <a href="admin.php">Admin</a>
 </div>

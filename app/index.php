@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 include_once 'includes/pdo.php';
 
 ?>
@@ -26,9 +26,6 @@ include_once 'includes/pdo.php';
         ?>
 
     </header>
-
-
-
     <main>
         <div class="index-header">
             <div>
@@ -68,7 +65,7 @@ include_once 'includes/pdo.php';
 
                     //  Show alles van burgers tenzij hij leeg is.
                     //  Define SQL statement
-                    $sql = "SELECT * FROM Reizen";
+                    $sql = "SELECT * FROM Reizen LIMIT 4";
 
                     //  Prepare SQL statement
                     $statement = $pdo->prepare($sql);
@@ -82,29 +79,30 @@ include_once 'includes/pdo.php';
                     
                     <?php
 
-                        //$i = 1;
-                        //while ($i <= 6) {
-                        //    $i = $i + 1;
+                        // if ($i <= 3) {  
+                        //     break;
                             
                     ?>
                     
                     <div class="one-destination">
                         <!-- Image en label -->
                         <div class="image-label">
-                            <div class="index-label">
+                            <div class="label-box">
                                 <?php
                                     if ($reis['Strand-en-zon'] == 1) {
-                                        echo "Strand en zon";
-                                    } elseif ($reis['Stedentrip'] == 1) {
-                                        echo "Stedentrip";
-                                    } elseif ($reis['Wintersport'] == 1) {
-                                        echo "Wintersport";
-                                    } elseif ($reis['Natuur'] == 1) {
-                                        echo "Natuur";
-                                    } elseif ($reis['Cultuur'] == 1) {
-                                        echo "Cultuur";
-                                    } else {
-                                        // do nothing
+                                        echo "<div class='index-label'>Strand en zon</div>";
+                                    }
+                                    if ($reis['Stedentrip'] == 1) {
+                                        echo "<div class='index-label'>Stedentrip</div>";
+                                    }
+                                    if ($reis['Wintersport'] == 1) {
+                                        echo "<div class='index-label'>Wintersport</div>";
+                                    }
+                                    if ($reis['Natuur'] == 1) {
+                                        echo "<div class='index-label'>Natuur</div>";
+                                    }
+                                    if ($reis['Cultuur'] == 1) {
+                                        echo "<div class='index-label'>Cultuur</div>";
                                     }
                                 ?>
                             </div>
@@ -131,26 +129,45 @@ include_once 'includes/pdo.php';
 
         <div class="reviews-index">
             <span class="title-block">Reviews</span>
-            <div class="one-review">
+
+            <?php 
+            
+            $sqlreview = "SELECT * FROM recensies";
+            $reviewstatement = $pdo->prepare($sqlreview);
+            $reviewstatement->execute();
+            $reviews = $reviewstatement->fetchAll();
+
+            
+            
+
+            foreach ($reviews as $review) { ?>
+            <?php 
+
+            $sqluserreview = "SELECT * FROM Gebruikers WHERE `User-id` = ?";
+            $userreview = $pdo->prepare($sqluserreview);
+            $userreview->bindParam(1, $review['User-id']);
+            $userreview->execute();
+            $userreviewer = $userreview->fetch();
+
+            $sqlreisreview = "SELECT * FROM Reizen WHERE `Reis-id` = ?";
+            $reisreview = $pdo->prepare($sqlreisreview);
+            $reisreview->bindParam(1, $review['Reis-id']);
+            $reisreview->execute();
+            $reisreviewer = $reisreview->fetch();
+
+
+            ?>
+                <div class="one-review">
                 <div class="review-header">
                     <div class="review-info">
-                        <span>Erik Bakker</span>
-                        <span>Review over Tokyo, Japan</span>
+                        <span><?php echo  $userreviewer['Gebruikersnaam'] ?> </span>
+                        <span>Review over de reis naar <?php echo $reisreviewer['Bestemming'];?></span>
                     </div>
-                    <span>5/5</span>
+                    <span><?php echo $review['Beoordeling'] ?> / 5</span>
                 </div>
-                <p>Ik ging naar Japan met Vaygo. Wat een tyfus. Ik ga morgen weer.</p>
+                <p><?php echo $review['Bericht'] ?></p>
             </div>
-            <div class="one-review">
-                <div class="review-header">
-                    <div class="review-info">
-                        <span>Harm</span>
-                        <span>Review over Lissabon, Portugal</span>
-                    </div>
-                    <span>1/5</span>
-                </div>
-                <p>kanker</p>
-            </div>
+           <?php } ?>
             <a href="allreviews.php"><button class="action-button">Zie alle reviews</button></a>
         </div>
     </main>
