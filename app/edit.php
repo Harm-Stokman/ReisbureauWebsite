@@ -39,7 +39,7 @@ include_once 'includes/pdo.php';
                     <textarea rows="1" name="beschrijving" placeholder="Korte beschrijving"></textarea>
                     <input type="text" name="prijs" placeholder="Prijs">
                     <input type="text" name="afbeelding" placeholder="Afbeelding">
-                    <select type="text" name="continent" placeholder="Continent">
+                    <select type="text" name="continent">
                         <option value="Continent">Continent...</option>
                         <option value="Noord-Amerika">Noord-Amerika</option>
                         <option value="Zuid-Amerika">Zuid-Amerika</option>
