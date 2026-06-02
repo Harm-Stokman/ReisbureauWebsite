@@ -132,7 +132,7 @@ include_once 'includes/pdo.php';
 
             <?php 
             
-            $sqlreview = "SELECT * FROM recensies";
+            $sqlreview = "SELECT * FROM  recensies LIMIT 3";
             $reviewstatement = $pdo->prepare($sqlreview);
             $reviewstatement->execute();
             $reviews = $reviewstatement->fetchAll();
