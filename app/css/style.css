@@ -558,9 +558,14 @@ select {
     padding: 10px;
 }
 
-.userform div select {
+.userform select {
     height: 40px;
     font-size: 20px;
+}
+
+.userform img {
+    height: 40px;
+    width: 40px;
 }
 
 .form-alt {
