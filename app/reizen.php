@@ -98,41 +98,43 @@ include_once 'includes/pdo.php';
 
                         foreach($reizen as $reis) { ?>
                         
-                        <div class="one-destination">
-                            <!-- Image en label -->
-                            <div class="image-label">
-                                <div class="index-label">
-                                    <?php
-                                        if ($reis['Strand-en-zon'] == 1) {
-                                            echo "Strand en zon";
-                                        } elseif ($reis['Stedentrip'] == 1) {
-                                            echo "Stedentrip";
-                                        } elseif ($reis['Wintersport'] == 1) {
-                                            echo "Wintersport";
-                                        } elseif ($reis['Natuur'] == 1) {
-                                            echo "Natuur";
-                                        } elseif ($reis['Cultuur'] == 1) {
-                                            echo "Cultuur";
-                                        } else {
-                                            // do nothing
-                                        }
-                                    ?>
-                                </div>
-                                <?php echo "<img src='img/" . $reis['kaart-afbeelding'] . "' alt='Bestemming image'>"?>
+                    <div class="one-destination">
+                        <!-- Image en label -->
+                        <div class="image-label">
+                            <div class="label-box">
+                                <?php
+                                    if ($reis['Strand-en-zon'] == 1) {
+                                        echo "<div class='index-label'>Strand en zon</div>";
+                                    }
+                                    if ($reis['Stedentrip'] == 1) {
+                                        echo "<div class='index-label'>Stedentrip</div>";
+                                    }
+                                    if ($reis['Wintersport'] == 1) {
+                                        echo "<div class='index-label'>Wintersport</div>";
+                                    }
+                                    if ($reis['Natuur'] == 1) {
+                                        echo "<div class='index-label'>Natuur</div>";
+                                    }
+                                    if ($reis['Cultuur'] == 1) {
+                                        echo "<div class='index-label'>Cultuur</div>";
+                                    }
+                                ?>
                             </div>
-                            <!-- Title betemming en korte info -->
-                            <div class="info-bestemming">
-                                <div class="text-info-bestemming">
-                                    <div class="titel-bestemming"><?php echo $reis['Bestemming'] ?>, <?php echo $reis['Land'] ?></div>
-                                    <p> <?php echo $reis['korte-beschrijving'] ?> </p>
-                                </div>
-                                <!-- Vlag en prijs button -->
-                                <div class="vlag-prijs">
-                                    <img src="img/<?php echo $reis['Vlag'] ?>" alt="vlag image">
-                                    <a href="">Nu vanaf €<?php echo $reis['Prijs'] ?>,- pp</a>
-                                </div>
+                            <?php echo "<img src='img/" . $reis['kaart-afbeelding'] . "' alt='Bestemming image'>"?>
+                        </div>
+                        <!-- Title betemming en korte info -->
+                        <div class="info-bestemming">
+                            <div class="text-info-bestemming">
+                                <div class="titel-bestemming"><?php echo $reis['Bestemming'] ?>, <?php echo $reis['Land'] ?></div>
+                                <p> <?php echo $reis['korte-beschrijving'] ?> </p>
+                            </div>
+                            <!-- Vlag en prijs button -->
+                            <div class="vlag-prijs">
+                                <img src="img/<?php echo $reis['Vlag'] ?>" alt="vlag image">
+                                <a href="">Nu vanaf €<?php echo $reis['Prijs'] ?>,- pp</a>
                             </div>
                         </div>
+                    </div>
 
                     <?php } ?>
 
