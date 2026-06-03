@@ -185,12 +185,11 @@ header a:hover {
 
 .text-info-bestemming {
     padding: 10px;
-    text-align: justify;
 }
 
 .text-info-bestemming p {
     color: var(--gunpowder);
-    font-size: 14px;
+    font-size: 10px;
     max-width: 300px;
 }
 
