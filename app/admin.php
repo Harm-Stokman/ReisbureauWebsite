@@ -99,8 +99,21 @@ if (isset($_GET['id'])) {
                     $searchStatement->execute();
                     $boekingen = $searchStatement->fetchAll();
 
+                    
+        
+            $testsql = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, Boekingen.Bericht, recensies.Beoordeling
+            FROM recensies 
+            JOIN Gebruikers ON recensies.`User-id` = Gebruikers.`User-id`
+            JOIN Reizen ON recensies.`Reis-id` = Reizen.`Reis-id`
+            LIMIT 3";
+            $bookingstatement = $pdo->prepare($testsql);
+            $bookingstatement->execute();
+            $bookingen = $reviewstatement->fetchAll();
+
 
                     foreach ($boekingen as $boeking)  { ?>
+
+
 
                     <?php 
                      
