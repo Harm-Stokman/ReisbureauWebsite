@@ -1,7 +1,32 @@
 <?php
 session_start();
 
+
+
 include_once 'includes/pdo.php';
+
+
+if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] == true) {
+    if ($_SESSION['user-id'] == 6) {
+        
+    } else {
+        header('Location: index.php');
+    }
+} else {
+    header('Location: inlog.php');
+}
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    $sql = "DELETE FROM Reizen
+    WHERE `Reis-id` = ?";
+
+    $delete = $pdo->prepare($sql);
+    $delete->bindParam(1, $id);
+    $delete->execute();
+
+}
 
 ?>
 
@@ -55,13 +80,13 @@ include_once 'includes/pdo.php';
                                 ?>
                             </div>
                             <div class="admin-actions">
-                                <a> <button class="button-top">Edit</button> </a>
-                                <a> <button class="button-bottom">Delete</button> </a>
+                                <a href="edit.php? id=<?php echo $reis['Reis-id'] ?>"> <button class="button-top">Edit</button> </a>
+                                <a href="admin.php?  id=<?php echo $reis['Reis-id'] ?>"> <button class="button-bottom">Delete</button> </a>
                             </div>
                         </div>
                     <?php } ?> 
                 </div>
-                <a><button class="action-button">Bestemming toevoegen</button></a>
+                <a href="add.php"><button class="action-button">Bestemming toevoegen</button></a>
             </div>
             <div class="admin-section">
                 <span class="title-block">
@@ -72,20 +97,36 @@ include_once 'includes/pdo.php';
                      $sql = "SELECT * FROM Boekingen";
                     $searchStatement = $pdo->prepare($sql);
                     $searchStatement->execute();
-
                     $boekingen = $searchStatement->fetchAll();
 
-                    ?>
 
-                    <div class="admin-booking-block">
+                    foreach ($boekingen as $boeking)  { ?>
+
+                    <?php 
+                     
+                     $sqlreisbooking = "SELECT * FROM Reizen WHERE `Reis-id` = ?";
+                     $reisbooking = $pdo->prepare($sqlreisbooking);
+                     $reisbooking->bindParam(1, $boeking['Reis-id']);
+                     $reisbooking->execute();
+                     $reisbooker = $reisbooking->fetch();
+
+                     $sqluserbooking = "SELECT * FROM Gebruikers WHERE `User-id` = ?";
+                     $userbooking = $pdo->prepare($sqluserbooking);
+                     $userbooking->bindParam(1, $boeking['User-id']);
+                     $userbooking->execute();
+                     $userbooker = $userbooking->fetch();
+
+                     ?>
+
+                      <div class="admin-booking-block">
                         <div class="booking-info">
-                            <span>Locatie:</span>
-                            <span>Op naam van:</span>
-                            <span>Aantal personen:</span>
-                            <span>Duur: ... tot ...</span>
+                            <span>Locatie: <?php echo $reisbooker['Bestemming']?></span>
+                            <span>Op naam van: <?php echo $userbooker['Gebruikersnaam'] ?></span>
+                            <span>Aantal personen:<?php echo $boeking['Aantal-personen'] ?> </span>
+                            <span>Duur: <?php echo $boeking['Startdatum'] ?> tot <?php echo $boeking['Einddatum'] ?></span>
                         </div>
                     </div>
-                    
+                 <?php  } ?> 
                 </div>
             </div>
         </div>
