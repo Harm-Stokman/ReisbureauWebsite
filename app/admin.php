@@ -7,7 +7,7 @@ include_once 'includes/pdo.php';
 
 
 if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] == true) {
-    if ($_SESSION['user-id'] == 6) {
+    if ($_SESSION['username'] === "Admin" ) {
         
     } else {
         header('Location: index.php');
@@ -20,7 +20,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     $sql = "DELETE FROM Reizen
-    WHERE `Reis-id` = ?";
+    WHERE `Reis_id` = ?";
 
     $delete = $pdo->prepare($sql);
     $delete->bindParam(1, $id);
@@ -80,8 +80,8 @@ if (isset($_GET['id'])) {
                                 ?>
                             </div>
                             <div class="admin-actions">
-                                <a href="edit.php? id=<?php echo $reis['Reis-id'] ?>"> <button class="button-top">Edit</button> </a>
-                                <a href="admin.php?  id=<?php echo $reis['Reis-id'] ?>"> <button class="button-bottom">Delete</button> </a>
+                                <a href="edit.php? id=<?php echo $reis['Reis_id'] ?>"> <button class="button-top">Edit</button> </a>
+                                <a href="admin.php?  id=<?php echo $reis['Reis_id'] ?>"> <button class="button-bottom">Delete</button> </a>
                             </div>
                         </div>
                     <?php } ?> 
@@ -94,48 +94,20 @@ if (isset($_GET['id'])) {
                 </span>
                 <div class="admin-field">
                     <?php
-                     $sql = "SELECT * FROM Boekingen";
-                    $searchStatement = $pdo->prepare($sql);
-                    $searchStatement->execute();
-                    $boekingen = $searchStatement->fetchAll();
-
-                    
-        
-            $testsql = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, Boekingen.Bericht, recensies.Beoordeling
-            FROM recensies 
-            JOIN Gebruikers ON recensies.`User-id` = Gebruikers.`User-id`
-            JOIN Reizen ON recensies.`Reis-id` = Reizen.`Reis-id`
-            LIMIT 3";
-            $bookingstatement = $pdo->prepare($testsql);
+            $sqlboekingen = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, Boekingen.Aantal_personen, Boekingen.Startdatum, Boekingen.Einddatum
+            FROM Boekingen 
+            JOIN Gebruikers ON Boekingen.`User_id` = Gebruikers.`User_id`
+            JOIN Reizen ON Boekingen.`Reis_id` = Reizen.`Reis_id`";
+            $bookingstatement = $pdo->prepare($sqlboekingen);
             $bookingstatement->execute();
-            $bookingen = $reviewstatement->fetchAll();
-
+            $boekingen = $bookingstatement->fetchAll();
 
                     foreach ($boekingen as $boeking)  { ?>
-
-
-
-                    <?php 
-                     
-                     $sqlreisbooking = "SELECT * FROM Reizen WHERE `Reis-id` = ?";
-                     $reisbooking = $pdo->prepare($sqlreisbooking);
-                     $reisbooking->bindParam(1, $boeking['Reis-id']);
-                     $reisbooking->execute();
-                     $reisbooker = $reisbooking->fetch();
-
-                     $sqluserbooking = "SELECT * FROM Gebruikers WHERE `User-id` = ?";
-                     $userbooking = $pdo->prepare($sqluserbooking);
-                     $userbooking->bindParam(1, $boeking['User-id']);
-                     $userbooking->execute();
-                     $userbooker = $userbooking->fetch();
-
-                     ?>
-
                       <div class="admin-booking-block">
                         <div class="booking-info">
-                            <span>Locatie: <?php echo $reisbooker['Bestemming']?></span>
-                            <span>Op naam van: <?php echo $userbooker['Gebruikersnaam'] ?></span>
-                            <span>Aantal personen:<?php echo $boeking['Aantal-personen'] ?> </span>
+                            <span>Locatie: <?php echo $boeking['Bestemming']?></span>
+                            <span>Op naam van: <?php echo $boeking['Gebruikersnaam'] ?></span>
+                            <span>Aantal personen:<?php echo $boeking['Aantal_personen'] ?> </span>
                             <span>Duur: <?php echo $boeking['Startdatum'] ?> tot <?php echo $boeking['Einddatum'] ?></span>
                         </div>
                     </div>

@@ -33,7 +33,8 @@ include_once 'includes/pdo.php';
                 Reis toevoegen
             </span>
             <form class="userform" method="post">
-                <div>
+               <div>
+                    <input type="hidden" name="id">
                     <input type="text" name="bestemming" placeholder="Bestemming">
                     <input type="text" name="land" placeholder="Land">
                     <textarea rows="1" name="beschrijving" placeholder="Korte beschrijving"></textarea>
@@ -47,6 +48,7 @@ include_once 'includes/pdo.php';
                         <option value="Afrika">Afrika</option>
                         <option value="Oceanië">Oceanië</option>
                     </select>
+                    <label>Hoi</label>
                     <input type="checkbox" name="strandzon" value="1">
                     <input type="checkbox" name="stedentrip" placeholder="Stedentrip" value="1">
                     <input type="checkbox" name="wintersport" placeholder="Wintersport" value="1">
@@ -55,7 +57,9 @@ include_once 'includes/pdo.php';
                     <textarea rows="1" name="welkomstbericht" placeholder="Welkomstbericht"></textarea>
                     <textarea rows="1" name="historie" placeholder="Historie"></textarea>
                     <textarea rows="1" name="wattedoen" placeholder="Wat te doen"></textarea>
-                    <input type="text" name="Vlag" placeholder="Vlag">
+                    <input type="text" name="vlag" placeholder="Vlag">
+                    <input type="text" name="achtergrond" placeholder="Achtergrond">
+                    <input type="text" name="kaartafbeelding" placeholder="Kaart-afbeelding">
                 </div>
                 <input class="action-button" type="submit" name="submit" value="Toevoegen">
             </form>

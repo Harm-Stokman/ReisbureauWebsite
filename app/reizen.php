@@ -103,7 +103,7 @@ include_once 'includes/pdo.php';
                         <div class="image-label">
                             <div class="label-box">
                                 <?php
-                                    if ($reis['Strand-en-zon'] == 1) {
+                                    if ($reis['Strand_en_zon'] == 1) {
                                         echo "<div class='index-label'>Strand en zon</div>";
                                     }
                                     if ($reis['Stedentrip'] == 1) {
@@ -120,13 +120,13 @@ include_once 'includes/pdo.php';
                                     }
                                 ?>
                             </div>
-                            <?php echo "<img src='img/" . $reis['kaart-afbeelding'] . "' alt='Bestemming image'>"?>
+                            <?php echo "<img src='img/" . $reis['kaart_afbeelding'] . "' alt='Bestemming image'>"?>
                         </div>
                         <!-- Title betemming en korte info -->
                         <div class="info-bestemming">
                             <div class="text-info-bestemming">
                                 <div class="titel-bestemming"><?php echo $reis['Bestemming'] ?>, <?php echo $reis['Land'] ?></div>
-                                <p> <?php echo $reis['korte-beschrijving'] ?> </p>
+                                <p> <?php echo $reis['korte_beschrijving'] ?> </p>
                             </div>
                             <!-- Vlag en prijs button -->
                             <div class="vlag-prijs">

@@ -63,11 +63,11 @@ if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] == true) {
                     $reizen = $statementOverzicht->fetchAll();
 
                     foreach ($reizen as $reis) { ?>
-                        <option name="bestemming" value="<?php echo $reis['Reis-id'] ?>"> <?php echo $reis['Bestemming'] ?>
+                        <option name="bestemming" value="<?php echo $reis['Reis_id'] ?>"> <?php echo $reis['Bestemming'] ?>
                         </option>
                     <?php } ?>
                 </select>
-                 <input type="hidden" name="user" value="<?php echo $_SESSION['user-id'];?>">
+                 <input type="hidden" name="user" value="<?php echo $_SESSION['user_id'];?>">
                 <input type="number" name="beoordeling" max="5" min="1">
                 <div>
                     <textarea rows="1" name="bericht" placeholder="Uw review"></textarea>
