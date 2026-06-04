@@ -38,12 +38,12 @@ include_once 'includes/pdo.php';
 
             if (isset($_GET['id'])) {
                 $reisstatement = $pdo->prepare("SELECT * FROM Reizen
-            WHERE `Reis-id` = ?");
+            WHERE `Reis_id` = ?");
                 $reisstatement->bindParam(1, $_GET['id']);
                 $reisstatement->execute();
             } else {
                 $reisstatement = $pdo->prepare("SELECT * FROM Reizen
-            WHERE `Reis-id` = ?");
+            WHERE `Reis_id` = ?");
                 $reisstatement->bindParam(1, $_POST['id']);
                 $reisstatement->execute();
             }
@@ -55,10 +55,10 @@ include_once 'includes/pdo.php';
 
             <form class="userform" method="post">
                 <div>
-                    <input type="hidden" name="id" value="<?php echo $reis['Reis-id'] ?>">
+                    <input type="hidden" name="id" value="<?php echo $reis['Reis_id'] ?>">
                     <input type="text" name="bestemming" placeholder="Bestemming" value="<?php echo $reis['Bestemming'] ?>">
                     <input type="text" name="land" placeholder="Land" value="<?php echo $reis['Land'] ?>">
-                    <textarea rows="1" name="beschrijving" placeholder="Korte beschrijving"><?php echo $reis['korte-beschrijving'] ?></textarea>
+                    <textarea rows="1" name="beschrijving" placeholder="Korte beschrijving"><?php echo $reis['korte_beschrijving'] ?></textarea>
                     <input type="text" name="prijs" placeholder="Prijs" value="<?php echo $reis['Prijs'] ?>">
                     <select type="text" name="continent" value="<?php echo $reis['Continent'] ?>">
                         <option value="Continent">Continent...</option>
@@ -75,12 +75,12 @@ include_once 'includes/pdo.php';
                     <input type="checkbox" name="wintersport" placeholder="Wintersport" value="1">
                     <input type="checkbox" name="natuur" placeholder="Natuur" value="1">
                     <input type="checkbox" name="cultuur" placeholder="Cultuur" value="1">
-                    <textarea rows="1" name="welkomstbericht" placeholder="Welkomstbericht"><?php echo $reis['Welkom-bericht'] ?></textarea>
+                    <textarea rows="1" name="welkomstbericht" placeholder="Welkomstbericht"><?php echo $reis['Welkom_bericht'] ?></textarea>
                     <textarea rows="1" name="historie" placeholder="Historie"><?php echo $reis['Historie'] ?></textarea>
-                    <textarea rows="1" name="wattedoen" placeholder="Wat te doen"><?php echo $reis['Wat-te-doen'] ?></textarea>
+                    <textarea rows="1" name="wattedoen" placeholder="Wat te doen"><?php echo $reis['Wat_te_doen'] ?></textarea>
                     <input type="text" name="vlag" placeholder="Vlag" value="<?php echo $reis['Vlag'] ?>">
                     <input type="text" name="achtergrond" placeholder="Achtergrond" value="<?php echo $reis['Achtergrond'] ?>">
-                    <input type="text" name="kaartafbeelding" placeholder="Kaart-afbeelding" value="<?php echo $reis['kaart-afbeelding'] ?>">
+                    <input type="text" name="kaartafbeelding" placeholder="Kaart-afbeelding" value="<?php echo $reis['kaart_afbeelding'] ?>">
                 </div>
                 <input class="action-button" type="submit" name="submit" value="Bewerken">
             </form>
