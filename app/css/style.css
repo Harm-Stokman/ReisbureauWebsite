@@ -213,8 +213,8 @@ header a:hover {
 }
 
 .vlag-prijs img {
-    width: 75px;
-    height: auto;
+    width: 100px;
+    height: 70px;
     border: 1px solid var(--gunpowder);
     border-radius: 10px;
 }
@@ -506,8 +506,8 @@ header a:hover {
 }
 
 .admin-block img {
-    max-width: 180px;
-    max-height: 80px;
+    width: 120px;
+    height: 80px;
     border-radius: 10px;
 }
 
