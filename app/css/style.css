@@ -545,7 +545,7 @@ header a:hover {
 
 .button-bottom {
     border-radius: 0px 0px 15px 0px;
-    background: var(--dark_red);
+    background: var(--red);
 }
 
 .action-button {
@@ -582,6 +582,11 @@ header a:hover {
     width: 50px;
     border-radius: 0px 15px 15px 0px;
     border: none;
+}
+
+.delete-button:hover {
+    cursor: pointer;
+    background: var(--dark_red);
 }
 
 .booking-info {
