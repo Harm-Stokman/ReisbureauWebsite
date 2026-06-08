@@ -172,7 +172,7 @@ header a:hover {
 
 .image-label img {
     width: 550px;
-    height: auto;
+    height: 210px;
     position: relative;
     z-index: 1;
 }
