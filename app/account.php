@@ -57,26 +57,34 @@ if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] = true) {
             </div>
             <h1>Uw boekingen</h1>
             <div class="admin-field">
-               <?php
-            $sqlboekingen = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, Boekingen.Aantal_personen, Boekingen.Startdatum, Boekingen.Einddatum
+                <?php
+                $sqlboekingen = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, Boekingen.Aantal_personen, Boekingen.Startdatum, Boekingen.Einddatum
             FROM Boekingen 
             JOIN Gebruikers ON Boekingen.`User_id` = Gebruikers.`User_id` AND Gebruikers.`User_id` = ?
             JOIN Reizen ON Boekingen.`Reis_id` = Reizen.`Reis_id`";
-            $bookingstatement = $pdo->prepare($sqlboekingen);
-            $bookingstatement->bindParam(1, $id);
-            $bookingstatement->execute();
-            $boekingen = $bookingstatement->fetchAll();
+                $bookingstatement = $pdo->prepare($sqlboekingen);
+                $bookingstatement->bindParam(1, $id);
+                $bookingstatement->execute();
+                $boekingen = $bookingstatement->fetchAll();
 
-                    foreach ($boekingen as $boeking)  { ?>
-                      <div class="admin-booking-block">
-                        <div class="booking-info">
-                            <span>Locatie: <?php echo $boeking['Bestemming']?></span>
-                            <span>Op naam van: <?php echo $boeking['Gebruikersnaam'] ?></span>
-                            <span>Aantal personen: <?php echo $boeking['Aantal_personen'] ?> </span>
-                            <span>Duur: <?php echo $boeking['Startdatum'] ?> tot <?php echo $boeking['Einddatum'] ?></span>
+                if ($bookingstatement->rowCount() > 0) {
+
+
+
+                    foreach ($boekingen as $boeking) { ?>
+                        <div class="admin-booking-block">
+                            <div class="booking-info">
+                                <span>Locatie: <?php echo $boeking['Bestemming'] ?></span>
+                                <span>Op naam van: <?php echo $boeking['Gebruikersnaam'] ?></span>
+                                <span>Aantal personen: <?php echo $boeking['Aantal_personen'] ?> </span>
+                                <span>Duur: <?php echo $boeking['Startdatum'] ?> tot <?php echo $boeking['Einddatum'] ?></span>
+                            </div>
+                            <a href="account.php"><button class="delete-button">X</button></a>
                         </div>
-                    </div>
-                 <?php  } ?> 
+                    <?php }
+                } else {
+                    echo "Geen boekingen gevonden..";
+                } ?>
             </div>
         </div>
     </main>

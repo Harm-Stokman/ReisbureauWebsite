@@ -7,8 +7,8 @@ include_once 'includes/pdo.php';
 
 
 if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] == true) {
-    if ($_SESSION['username'] === "Admin" ) {
-        
+    if ($_SESSION['username'] === "Admin") {
+
     } else {
         header('Location: index.php');
     }
@@ -80,11 +80,13 @@ if (isset($_GET['id'])) {
                                 ?>
                             </div>
                             <div class="admin-actions">
-                                <a href="edit.php? id=<?php echo $reis['Reis_id'] ?>"> <button class="button-top">Edit</button> </a>
-                                <a href="admin.php?  id=<?php echo $reis['Reis_id'] ?>"> <button class="button-bottom">Delete</button> </a>
+                                <a href="edit.php? id=<?php echo $reis['Reis_id'] ?>"> <button
+                                        class="button-top">Edit</button> </a>
+                                <a href="admin.php?  id=<?php echo $reis['Reis_id'] ?>"> <button
+                                        class="button-bottom">Delete</button> </a>
                             </div>
                         </div>
-                    <?php } ?> 
+                    <?php } ?>
                 </div>
                 <a href="add.php"><button class="action-button">Bestemming toevoegen</button></a>
             </div>
@@ -94,24 +96,31 @@ if (isset($_GET['id'])) {
                 </span>
                 <div class="admin-field">
                     <?php
-            $sqlboekingen = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, Boekingen.Aantal_personen, Boekingen.Startdatum, Boekingen.Einddatum
+                    $sqlboekingen = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, Boekingen.Aantal_personen, Boekingen.Startdatum, Boekingen.Einddatum
             FROM Boekingen 
             JOIN Gebruikers ON Boekingen.`User_id` = Gebruikers.`User_id`
             JOIN Reizen ON Boekingen.`Reis_id` = Reizen.`Reis_id`";
-            $bookingstatement = $pdo->prepare($sqlboekingen);
-            $bookingstatement->execute();
-            $boekingen = $bookingstatement->fetchAll();
+                    $bookingstatement = $pdo->prepare($sqlboekingen);
+                    $bookingstatement->execute();
+                    $boekingen = $bookingstatement->fetchAll();
+                    if ($bookingstatement->rowCount() > 0) {
 
-                    foreach ($boekingen as $boeking)  { ?>
-                      <div class="admin-booking-block">
-                        <div class="booking-info">
-                            <span>Locatie: <?php echo $boeking['Bestemming']?></span>
-                            <span>Op naam van: <?php echo $boeking['Gebruikersnaam'] ?></span>
-                            <span>Aantal personen:<?php echo $boeking['Aantal_personen'] ?> </span>
-                            <span>Duur: <?php echo $boeking['Startdatum'] ?> tot <?php echo $boeking['Einddatum'] ?></span>
-                        </div>
-                    </div>
-                 <?php  } ?> 
+
+
+                        foreach ($boekingen as $boeking) { ?>
+                            <div class="admin-booking-block">
+                                <div class="booking-info">
+                                    <span>Locatie: <?php echo $boeking['Bestemming'] ?></span>
+                                    <span>Op naam van: <?php echo $boeking['Gebruikersnaam'] ?></span>
+                                    <span>Aantal personen: <?php echo $boeking['Aantal_personen'] ?> </span>
+                                    <span>Duur: <?php echo $boeking['Startdatum'] ?> tot
+                                        <?php echo $boeking['Einddatum'] ?></span>
+                                </div>
+                            </div>
+                        <?php }
+                    } else {
+                        echo "Geen boekingen gevonden..";
+                    } ?>
                 </div>
             </div>
         </div>
