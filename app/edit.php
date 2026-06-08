@@ -89,7 +89,7 @@ SET Bestemming = ?, Land = ?, korte_beschrijving = ?, Prijs = ?, Vlag = ?, Conti
             <span class="title-block">
                 Reis Bewerken
             </span>
-
+             <a href="admin.php"><button class="action-button">Terug</button></a>
             <?php
 
             if (isset($_GET['id'])) {
