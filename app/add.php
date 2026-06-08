@@ -82,6 +82,7 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
             <span class="title-block">
                 Reis toevoegen
             </span>
+            <a href="admin.php"><button class="action-button">Terug</button></a>
             <form class="userform" method="post">
                 <div>
                     <input type="text" name="bestemming" placeholder="Bestemming">
