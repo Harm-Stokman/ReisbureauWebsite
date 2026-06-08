@@ -67,7 +67,7 @@ if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] == true) {
                         </option>
                     <?php } ?>
                 </select>
-                 <input type="hidden" name="user" value="<?php echo $_SESSION['user_id'];?>">
+                 <input type="hidden" name="user" value="<?php echo $_SESSION['user-id'];?>">
                 <input type="number" name="beoordeling" max="5" min="1">
                 <div>
                     <textarea rows="1" name="bericht" placeholder="Uw review"></textarea>
