@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
     $useradd->bindParam(2, $_POST['email'] );
     $useradd->bindParam(3, $_POST['password']);
     $useradd->execute();    
-    header('Location: index.php');
+    header('Location: inlog.php');
     } else {
         echo "Wachtwoord komt niet overeen!";
     }
