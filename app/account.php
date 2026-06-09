@@ -8,6 +8,18 @@ if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] = true) {
     header('Location: inlog.php');
 }
 
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    $sqldelete = "DELETE FROM Boekingen
+    WHERE `Boeking_id` = ?";
+
+    $delete = $pdo->prepare($sqldelete);
+    $delete->bindParam(1, $id);
+    $delete->execute();
+
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +70,7 @@ if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] = true) {
             <h1>Uw boekingen</h1>
             <div class="admin-field">
                 <?php
-                $sqlboekingen = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, Boekingen.Aantal_personen, Boekingen.Startdatum, Boekingen.Einddatum
+                $sqlboekingen = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, Boekingen.Aantal_personen, Boekingen.Startdatum, Boekingen.Einddatum, Boekingen.Boeking_id
             FROM Boekingen 
             JOIN Gebruikers ON Boekingen.`User_id` = Gebruikers.`User_id` AND Gebruikers.`User_id` = ?
             JOIN Reizen ON Boekingen.`Reis_id` = Reizen.`Reis_id`";
@@ -79,7 +91,7 @@ if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] = true) {
                                 <span>Aantal personen: <?php echo $boeking['Aantal_personen'] ?> </span>
                                 <span>Duur: <?php echo $boeking['Startdatum'] ?> tot <?php echo $boeking['Einddatum'] ?></span>
                             </div>
-                            <a href="account.php"><button class="delete-button">X</button></a>
+                            <a href="account.php? id=<?php echo $boeking['Boeking_id']?>"><button class="delete-button">Reis annuleren</button></a>
                         </div>
                     <?php }
                 } else {
