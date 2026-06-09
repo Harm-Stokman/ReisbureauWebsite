@@ -18,5 +18,13 @@
     
     ?>
     <a href="contact.php">Contact</a>
-    <a href="admin.php">Admin</a>
+    <?php 
+    
+    if (isset($_SESSION['logged-in']) && $_SESSION['username'] == "Admin") {
+        echo "<a href='admin.php'> Admin </a>";
+    } else {
+         echo "<a href='account.php'> Account </a>";
+    }
+
+    ?>
 </div>

@@ -172,7 +172,7 @@ header a:hover {
 
 .image-label img {
     width: 550px;
-    height: auto;
+    height: 210px;
     position: relative;
     z-index: 1;
 }
@@ -185,12 +185,11 @@ header a:hover {
 
 .text-info-bestemming {
     padding: 10px;
-    text-align: justify;
 }
 
 .text-info-bestemming p {
     color: var(--gunpowder);
-    font-size: 14px;
+    font-size: 10px;
     max-width: 300px;
 }
 
@@ -213,8 +212,8 @@ header a:hover {
 }
 
 .vlag-prijs img {
-    width: 75px;
-    height: auto;
+    width: 100px;
+    height: 70px;
     border: 1px solid var(--gunpowder);
     border-radius: 10px;
 }
@@ -506,8 +505,8 @@ header a:hover {
 }
 
 .admin-block img {
-    max-width: 180px;
-    max-height: 80px;
+    width: 120px;
+    height: 80px;
     border-radius: 10px;
 }
 
@@ -546,7 +545,7 @@ header a:hover {
 
 .button-bottom {
     border-radius: 0px 0px 15px 0px;
-    background: var(--dark_red);
+    background: var(--red);
 }
 
 .action-button {
@@ -583,6 +582,11 @@ header a:hover {
     width: 50px;
     border-radius: 0px 15px 15px 0px;
     border: none;
+}
+
+.delete-button:hover {
+    cursor: pointer;
+    background: var(--dark_red);
 }
 
 .booking-info {

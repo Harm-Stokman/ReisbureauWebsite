@@ -1,7 +1,32 @@
 <?php
 session_start();
 
+
+
 include_once 'includes/pdo.php';
+
+
+if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] == true) {
+    if ($_SESSION['username'] === "Admin") {
+
+    } else {
+        header('Location: index.php');
+    }
+} else {
+    header('Location: inlog.php');
+}
+
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+
+    $sql = "DELETE FROM Reizen
+    WHERE `Reis_id` = ?";
+
+    $delete = $pdo->prepare($sql);
+    $delete->bindParam(1, $id);
+    $delete->execute();
+
+}
 
 ?>
 
@@ -55,13 +80,15 @@ include_once 'includes/pdo.php';
                                 ?>
                             </div>
                             <div class="admin-actions">
-                                <a> <button class="button-top">Edit</button> </a>
-                                <a> <button class="button-bottom">Delete</button> </a>
+                                <a href="edit.php? id=<?php echo $reis['Reis_id'] ?>"> <button
+                                        class="button-top">Edit</button> </a>
+                                <a href="admin.php?  id=<?php echo $reis['Reis_id'] ?>"> <button
+                                        class="button-bottom">Delete</button> </a>
                             </div>
                         </div>
-                    <?php } ?> 
+                    <?php } ?>
                 </div>
-                <a><button class="action-button">Bestemming toevoegen</button></a>
+                <a href="add.php"><button class="action-button">Bestemming toevoegen</button></a>
             </div>
             <div class="admin-section">
                 <span class="title-block">
@@ -69,23 +96,31 @@ include_once 'includes/pdo.php';
                 </span>
                 <div class="admin-field">
                     <?php
-                     $sql = "SELECT * FROM Boekingen";
-                    $searchStatement = $pdo->prepare($sql);
-                    $searchStatement->execute();
+                    $sqlboekingen = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, Boekingen.Aantal_personen, Boekingen.Startdatum, Boekingen.Einddatum
+            FROM Boekingen 
+            JOIN Gebruikers ON Boekingen.`User_id` = Gebruikers.`User_id`
+            JOIN Reizen ON Boekingen.`Reis_id` = Reizen.`Reis_id`";
+                    $bookingstatement = $pdo->prepare($sqlboekingen);
+                    $bookingstatement->execute();
+                    $boekingen = $bookingstatement->fetchAll();
+                    if ($bookingstatement->rowCount() > 0) {
 
-                    $boekingen = $searchStatement->fetchAll();
 
-                    ?>
 
-                    <div class="admin-booking-block">
-                        <div class="booking-info">
-                            <span>Locatie:</span>
-                            <span>Op naam van:</span>
-                            <span>Aantal personen:</span>
-                            <span>Duur: ... tot ...</span>
-                        </div>
-                    </div>
-                    
+                        foreach ($boekingen as $boeking) { ?>
+                            <div class="admin-booking-block">
+                                <div class="booking-info">
+                                    <span>Locatie: <?php echo $boeking['Bestemming'] ?></span>
+                                    <span>Op naam van: <?php echo $boeking['Gebruikersnaam'] ?></span>
+                                    <span>Aantal personen: <?php echo $boeking['Aantal_personen'] ?> </span>
+                                    <span>Duur: <?php echo $boeking['Startdatum'] ?> tot
+                                        <?php echo $boeking['Einddatum'] ?></span>
+                                </div>
+                            </div>
+                        <?php }
+                    } else {
+                        echo "Geen boekingen gevonden..";
+                    } ?>
                 </div>
             </div>
         </div>

@@ -89,7 +89,7 @@ include_once 'includes/pdo.php';
                         <div class="image-label">
                             <div class="label-box">
                                 <?php
-                                    if ($reis['Strand-en-zon'] == 1) {
+                                    if ($reis['Strand_en_zon'] == 1) {
                                         echo "<div class='index-label'>Strand en zon</div>";
                                     }
                                     if ($reis['Stedentrip'] == 1) {
@@ -106,13 +106,13 @@ include_once 'includes/pdo.php';
                                     }
                                 ?>
                             </div>
-                            <?php echo "<img src='img/" . $reis['kaart-afbeelding'] . "' alt='Bestemming image'>"?>
+                            <?php echo "<img src='img/" . $reis['kaart_afbeelding'] . "' alt='Bestemming image'>"?>
                         </div>
                         <!-- Title betemming en korte info -->
                         <div class="info-bestemming">
                             <div class="text-info-bestemming">
                                 <div class="titel-bestemming"><?php echo $reis['Bestemming'] ?>, <?php echo $reis['Land'] ?></div>
-                                <p> <?php echo $reis['korte-beschrijving'] ?> </p>
+                                <p> <?php echo $reis['korte_beschrijving'] ?> </p>
                             </div>
                             <!-- Vlag en prijs button -->
                             <div class="vlag-prijs">
@@ -132,36 +132,21 @@ include_once 'includes/pdo.php';
 
             <?php 
             
-            $sqlreview = "SELECT * FROM  recensies LIMIT 3";
-            $reviewstatement = $pdo->prepare($sqlreview);
+            $sqlrecensie = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, recensies.Bericht, recensies.Beoordeling
+            FROM recensies 
+            JOIN Gebruikers ON recensies.`User_id` = Gebruikers.`User_id`
+            JOIN Reizen ON recensies.`Reis_id` = Reizen.`Reis_id`
+            LIMIT 3";
+            $reviewstatement = $pdo->prepare($sqlrecensie);
             $reviewstatement->execute();
             $reviews = $reviewstatement->fetchAll();
 
-            
-            
-
             foreach ($reviews as $review) { ?>
-            <?php 
-
-            $sqluserreview = "SELECT * FROM Gebruikers WHERE `User-id` = ?";
-            $userreview = $pdo->prepare($sqluserreview);
-            $userreview->bindParam(1, $review['User-id']);
-            $userreview->execute();
-            $userreviewer = $userreview->fetch();
-
-            $sqlreisreview = "SELECT * FROM Reizen WHERE `Reis-id` = ?";
-            $reisreview = $pdo->prepare($sqlreisreview);
-            $reisreview->bindParam(1, $review['Reis-id']);
-            $reisreview->execute();
-            $reisreviewer = $reisreview->fetch();
-
-
-            ?>
                 <div class="one-review">
                 <div class="review-header">
                     <div class="review-info">
-                        <span><?php echo  $userreviewer['Gebruikersnaam'] ?> </span>
-                        <span>Review over de reis naar <?php echo $reisreviewer['Bestemming'];?></span>
+                        <span><?php echo  $review['Gebruikersnaam'] ?> </span>
+                        <span>Review over de reis naar <?php echo $review['Bestemming'];?></span>
                     </div>
                     <span><?php echo $review['Beoordeling'] ?> / 5</span>
                 </div>

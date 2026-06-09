@@ -63,7 +63,7 @@ if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] == true) {
                     $reizen = $statementOverzicht->fetchAll();
 
                     foreach ($reizen as $reis) { ?>
-                        <option name="bestemming" value="<?php echo $reis['Reis-id'] ?>"> <?php echo $reis['Bestemming'] ?>
+                        <option name="bestemming" value="<?php echo $reis['Reis_id'] ?>"> <?php echo $reis['Bestemming'] ?>
                         </option>
                     <?php } ?>
                 </select>
