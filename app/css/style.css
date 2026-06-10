@@ -357,6 +357,22 @@ header a:hover {
     flex-direction: column;
 }
 
+.all-bestemming-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* image truckje */
+    --background_img: url('../img/beach-horizon.jpg');
+    background-image: var(--background_img);
+    background-size: cover;
+    min-height: 600px;
+    margin-top: -50px;
+    /* truckje om content in midden te zetten */
+    display: grid;
+    place-items: center;
+}
+
 .title-block-alt {
     background: var(--dark_blue);
     padding: 10px;

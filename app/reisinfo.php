@@ -31,7 +31,8 @@ include_once 'includes/pdo.php';
 
     <main>
         <div class="box-info">
-            <div class="all-bestemming-info" style="--background_img: url('../img/willemstad.png');">   <!-- Image changes depending on ID -->
+            <div class="all-bestemming-info" style="--background_img: url('../img/willemstad-card.png');">      <!-- Image changes depending on ID -->
+                <!-- <img src="img/willemstad.png" alt="bestemming image"> -->
                 <div class="bestemming-info-header">
                     <img src="img/Curacao.png" alt="Bestemming vlag">
                     <span class="title-block-continent">Noord-Amerika</span>
