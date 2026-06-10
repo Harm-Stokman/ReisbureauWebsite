@@ -357,6 +357,22 @@ header a:hover {
     flex-direction: column;
 }
 
+.all-bestemming-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* image truckje */
+    --background_img: url('../img/beach-horizon.jpg');
+    background-image: var(--background_img);
+    background-size: cover;
+    min-height: 600px;
+    margin-top: -50px;
+    /* truckje om content in midden te zetten */
+    display: grid;
+    place-items: center;
+}
+
 .title-block-alt {
     background: var(--dark_blue);
     padding: 10px;
@@ -436,6 +452,103 @@ header a:hover {
     flex-direction: column;
     gap: 15px;
 }
+
+
+
+/* ======================================================================================= */
+/* ===================================   REIS INFO   ===================================== */
+/* ======================================================================================= */
+.box-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.all-bestemming-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* image truckje */
+    --background_img: url('../img/beach-horizon.jpg');
+    background-image: var(--background_img);
+    background-size: cover;
+    min-height: 600px;
+    margin-top: -50px;
+    /* truckje om content in midden te zetten */
+    display: grid;
+    place-items: center;
+}
+
+.all-bestemming-info img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+}
+
+.bestemming-info-header {
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 300px;
+}
+
+
+.bestemming-info-header img {
+    width: 100px;
+    height: auto;
+    border: 2px solid var(--gunpowder);
+    border-radius: 15px;
+}
+
+.title-block-continent {
+    background: var(--teal);
+    padding: 5px;
+    color: var(--background);
+    border-radius: 15px;
+    max-width: 125px;
+    font-size: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.label-box-alt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.location-info {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.info-block {
+    font-size: 16px;
+    color: var(--gunpowder);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info-block p {
+    min-width: 350px;
+    max-width: 600px;
+}
+
+
 
 
 
