@@ -113,7 +113,7 @@ header a:hover {
     padding: 10px;
     color: var(--sand);
     border-radius: 10px;
-    max-width: 250px;
+    max-width: 300px;
     font-size: 25px;
     position: relative;
     z-index: 2;
@@ -378,7 +378,7 @@ header a:hover {
     padding: 10px;
     color: var(--background);
     border-radius: 10px;
-    max-width: 250px;
+    max-width: 300px;
     font-size: 25px;
     position: relative;
     z-index: 2;
@@ -479,6 +479,7 @@ header a:hover {
     /* truckje om content in midden te zetten */
     display: grid;
     place-items: center;
+    width: 100%;
 }
 
 .all-bestemming-info img {
@@ -499,10 +500,9 @@ header a:hover {
     margin-top: 300px;
 }
 
-
 .bestemming-info-header img {
     width: 100px;
-    height: auto;
+    height: 70px;
     border: 2px solid var(--gunpowder);
     border-radius: 15px;
 }

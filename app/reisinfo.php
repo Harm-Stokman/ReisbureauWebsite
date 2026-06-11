@@ -28,33 +28,60 @@ include_once 'includes/pdo.php';
     </header>
 
 
+    <?php 
+    
+    $sqlreis = "SELECT * FROM Reizen WHERE Reis_id = ?";
+
+    $reisstatement = $pdo->prepare($sqlreis);   // Maak verbinding met de database en bereid de SQL statement voor
+    $reisstatement->bindParam(1, $_GET['id']);  // Krijg ID van de link waar je op hebt geklikt (bindParam als placeholder)
+    $reisstatement->execute();                  // Voer de SQL statement uit
+
+    $reis = $reisstatement->fetch();
+    
+    ?>
+
 
     <main>
         <div class="box-info">
-            <div class="all-bestemming-info" style="--background_img: url('../img/willemstad-card.png');">      <!-- Image changes depending on ID -->
+            <div class="all-bestemming-info" style="--background_img: url('../img/<?php echo $reis['kaart_afbeelding'] ?>');">      <!-- Image changes depending on ID -->
                 <!-- <img src="img/willemstad.png" alt="bestemming image"> -->
                 <div class="bestemming-info-header">
-                    <img src="img/Curacao.png" alt="Bestemming vlag">
-                    <span class="title-block-continent">Noord-Amerika</span>
-                    <span class="title-block-alt">Willemstad, Curacao</span>
+                    <img src="img/<?php echo $reis['Vlag'] ?>" alt="Bestemming vlag">
+                    <span class="title-block-continent"><?php echo $reis['Continent'] ?></span>
+                    <span class="title-block-alt"><?php echo $reis['Bestemming'] ?>, <?php echo $reis['Land'] ?></span>
                     <div class="label-box-alt">
-                        <div class="index-label">Strand en zon</div>
-                        <div class="index-label">Stedentrip</div>
+                        <?php
+                            if ($reis['Strand_en_zon'] == 1) {
+                                echo "<div class='index-label'>Strand en zon</div>";
+                            }
+                            if ($reis['Stedentrip'] == 1) {
+                                echo "<div class='index-label'>Stedentrip</div>";
+                            }
+                            if ($reis['Wintersport'] == 1) {
+                                echo "<div class='index-label'>Wintersport</div>";
+                            }
+                            if ($reis['Natuur'] == 1) {
+                                echo "<div class='index-label'>Natuur</div>";
+                            }
+                            if ($reis['Cultuur'] == 1) {
+                                echo "<div class='index-label'>Cultuur</div>";
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
             <div class="location-info">
                 <div class="info-block">
-                    <span class="title-block">Welkom in Willemstad</span>
-                    <p>Welkom in Willemstad, het bruisende hart van Curaçao. Zodra je aankomt, word je omringd door kleurrijke gebouwen, een aangenaam klimaat en een ontspannen Caribische sfeer. De stad combineert Nederlandse architectuur met tropische invloeden, wat zorgt voor een unieke uitstraling die je nergens anders vindt. Wandel langs de beroemde waterkant, ontdek gezellige straatjes en geniet van de lokale cultuur. Of je nu komt voor een ontspannen vakantie, mooie foto's of het ontdekken van een nieuwe cultuur, Willemstad heeft voor iedere reiziger iets bijzonders te bieden. Wij zorgen ervoor dat jouw reis naar deze prachtige bestemming soepel begint met een comfortabele vlucht naar Curaçao.</p>
+                    <span class="title-block">Welkom in <?php echo $reis['Bestemming'] ?></span>
+                    <p><?php echo $reis['Welkom_bericht'] ?></php>
                 </div>
                 <div class="info-block">
                     <span class="title-block">Geschiedenis</span>
-                    <p>De geschiedenis van Willemstad begon in 1634, toen de Nederlanders zich op Curaçao vestigden en een handelsnederzetting opbouwden rond een natuurlijke haven. Door de gunstige ligging groeide de stad uit tot een belangrijk handelscentrum in het Caribisch gebied. In de eeuwen daarna ontstonden verschillende wijken, zoals Punda en Otrobanda, die nog steeds het historische karakter van de stad bepalen. De Nederlandse invloeden zijn vandaag de dag duidelijk zichtbaar in de architectuur. Dankzij de goed bewaarde binnenstad en haven werd Willemstad in 1997 opgenomen op de Werelderfgoedlijst van UNESCO.</p>
+                    <p><?php echo $reis['Historie'] ?></p>
                 </div>
                 <div class="info-block">
                     <span class="title-block">Wat te doen</span>
-                    <p>Willemstad biedt genoeg mogelijkheden voor een afwisselende vakantie. Bezoekers kunnen wandelen door de historische wijken Punda en Otrobanda, waar kleurrijke gebouwen en gezellige pleinen het straatbeeld bepalen. Ook de beroemde Koningin Emmabrug is een populaire bezienswaardigheid. Daarnaast zijn er diverse musea, winkels, restaurants en markten te vinden in de stad. Vanuit Willemstad zijn ook verschillende stranden gemakkelijk bereikbaar, waardoor een dag cultuur perfect gecombineerd kan worden met ontspanning aan zee. Of je nu houdt van geschiedenis, architectuur, winkelen of gewoon genieten van de Caribische sfeer, Willemstad heeft voor iedereen iets te bieden. </p>
+                    <p><?php echo $reis['Wat_te_doen'] ?></p>
                 </div>
             </div>
             <a href="boeken.php"><button class="action-button">Boek nu!</button></a>

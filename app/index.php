@@ -110,7 +110,7 @@ include_once 'includes/pdo.php';
                             <!-- Vlag en prijs button -->
                             <div class="vlag-prijs">
                                 <img src="img/<?php echo $reis['Vlag'] ?>" alt="vlag image">
-                                <a href="reisinfo.php" id="<?php $reis['Reis_id'] ?>">Nu vanaf €<?php echo $reis['Prijs'] ?>,- pp</a>
+                                <a href="reisinfo.php? id=<?php echo $reis['Reis_id'] ?>">Nu vanaf €<?php echo $reis['Prijs'] ?>,- pp</a>
                             </div>
                         </div>
                     </div>
