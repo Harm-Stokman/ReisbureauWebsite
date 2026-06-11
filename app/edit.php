@@ -3,7 +3,15 @@
 session_start();
 include_once 'includes/pdo.php';
 
+if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] == true) {
+    if ($_SESSION['username'] === "Admin") {
 
+    } else {
+        header('Location: index.php');
+    }
+} else {
+    header('Location: inlog.php');
+}
 
 if (isset($_POST['submit'])) {
 
