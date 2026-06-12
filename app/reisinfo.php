@@ -84,7 +84,7 @@ include_once 'includes/pdo.php';
                     <p><?php echo $reis['Wat_te_doen'] ?></p>
                 </div>
             </div>
-            <a href="boeken.php"><button class="action-button">Boek nu!</button></a>
+            <a href="boeken.php? id=<?php echo $reis['Reis_id'] ?>"><button class="action-button">Boek nu!</button></a>
         </div>
     </main>
 

@@ -34,10 +34,10 @@ include_once 'includes/pdo.php';
                     <select class="dropdown-selection" name="type">
                         <option value="">Type vakantie</option>
                         <option value="Strand-en-zon">Strand en zon</option>
-                        <option value="Strand-en-zon">Natuur</option>
-                        <option value="Strand-en-zon">Cultuur</option>
-                        <option value="Strand-en-zon">Stedentrip</option>
-                        <option value="Strand-en-zon">Wintersport</option>
+                        <option value="Natuur">Natuur</option>
+                        <option value="Cultuur">Cultuur</option>
+                        <option value="Stedentrip">Stedentrip</option>
+                        <option value="Wintersport">Wintersport</option>
                     </select>
                     <select class="dropdown-selection" name="continent">
                         <option value="">Continent</option>
