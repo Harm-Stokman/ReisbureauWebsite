@@ -433,7 +433,7 @@ header a:hover {
     border-radius: 10px;
 }
 
-.searchbar button {
+.searchbar .search-button {
     background: var(--dark_blue);
     color: var(--background);
     height: 30px;
