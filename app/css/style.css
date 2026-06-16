@@ -361,22 +361,6 @@ header a:hover {
     flex-direction: column;
 }
 
-.all-bestemming-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* image truckje */
-    --background_img: url('../img/beach-horizon.jpg');
-    background-image: var(--background_img);
-    background-size: cover;
-    min-height: 600px;
-    margin-top: -50px;
-    /* truckje om content in midden te zetten */
-    display: grid;
-    place-items: center;
-}
-
 .title-block-alt {
     background: var(--dark_blue);
     padding: 10px;
@@ -484,7 +468,6 @@ header a:hover {
     /* truckje om content in midden te zetten */
     display: grid;
     place-items: center;
-    width: 100%;
 }
 
 .all-bestemming-info img {
@@ -1116,92 +1099,40 @@ footer p:hover {
 
     /* -------------------------------------------- ALLE REIZEN ------------------------------------------------ */
     .main-reizen {
-        gap: 35px;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .all-bestemming-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        /* image truckje */
-        --background_img: url('../img/beach-horizon.jpg');
-        background-image: var(--background_img);
-        background-size: cover;
-        min-height: 600px;
-        margin-top: -50px;
-        /* truckje om content in midden te zetten */
-        display: grid;
-        place-items: center;
+        gap: 15px;
     }
 
     .title-block-alt {
-        background: var(--dark_blue);
-        padding: 10px;
-        color: var(--background);
-        border-radius: 10px;
-        max-width: 400px;
-        font-size: 25px;
-        position: relative;
-        z-index: 2;
+        padding: 5px;
+        border-radius: 8px;
+        max-width: 250px;
+        font-size: 18px;
     }
 
     .specific-search {
-        margin-top: 50px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .reizen-header {
-        margin-top: 50px;
-        position: relative;
-        text-align: center;
-        display: grid;
-        place-items: center;
+        margin-top: 0px;
     }
 
     .searchbar {
-        gap: 20px;
-        position: relative;
-        text-align: center;
-        display: grid;
-        place-items: center;
+        gap: 15px;
     }
 
     .searchbar form {
-        position: relative;
-        z-index: 1;
-        background: var(--teal);
-        width: 500px;
-        height: 75px;
-        border-radius: 10px;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+        width: 300px;
+        height: 45px;
+        border-radius: 8px;
     }
 
     .searchbar input {
-        background: var(--background);
-        color: var(--gunpowder);
-        font-size: 15px;
-        height: 30px;
-        width: auto;
-        border-radius: 10px;
+        font-size: 12px;
+        height: 20px;
+        border-radius: 8px;
     }
 
     .searchbar .search-button {
-        background: var(--dark_blue);
-        color: var(--background);
         height: 30px;
         width: 85px;
         border-radius: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .searchbar button:hover {
@@ -1216,5 +1147,35 @@ footer p:hover {
         align-items: center;
         flex-direction: column;
         gap: 15px;
+    }
+
+    /* ---------------------------------------------- REIS INFO ------------------------------------------------ */
+    .all-bestemming-info {
+        min-height: 300px;
+        width: 100%;
+    }
+
+    .bestemming-info-header {
+        gap: 15px;
+        margin-top: 75px;
+    }
+
+    .bestemming-info-header img {
+        width: 70px;
+        height: 50px;
+        border-radius: 10px;
+    }
+
+    .location-info {
+        gap: 15px;
+    }
+
+    .info-block {
+        font-size: 12px;
+    }
+
+    .info-block p {
+        min-width: 150px;
+        max-width: 350px;
     }
 }
