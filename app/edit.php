@@ -40,10 +40,7 @@ $id = $_POST['id'];
         $_POST['cultuur'] = 0;
     }
 
-    $sqlupdate = " UPDATE Reizen
-SET Bestemming = ?, Land = ?, korte_beschrijving = ?, Prijs = ?, Vlag = ?, Continent = ?,
- Strand_en_zon = ?, Stedentrip = ?, Wintersport = ?, Natuur = ?, Cultuur = ?, Welkom_bericht = ?, Historie = ?, Wat_te_doen = ?, Achtergrond = ?, kaart_afbeelding = ?
- WHERE Reis_id = $id";
+    $sqlupdate = " UPDATE Reizen SET Bestemming = ?, Land = ?, korte_beschrijving = ?, Prijs = ?, Vlag = ?, Continent = ?, Strand_en_zon = ?, Stedentrip = ?, Wintersport = ?, Natuur = ?, Cultuur = ?, Welkom_bericht = ?, Historie = ?, Wat_te_doen = ?, Achtergrond = ?, kaart_afbeelding = ? WHERE Reis_id = $id";
 
     $updatestatement = $pdo->prepare($sqlupdate);
     $updatestatement->bindParam(1, $_POST['bestemming']);
@@ -77,9 +74,7 @@ SET Bestemming = ?, Land = ?, korte_beschrijving = ?, Prijs = ?, Vlag = ?, Conti
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -225,16 +220,12 @@ SET Bestemming = ?, Land = ?, korte_beschrijving = ?, Prijs = ?, Vlag = ?, Conti
                         echo "checked";
                     }
                     ?>>
-                    <textarea rows="1" name="welkomstbericht"
-                        placeholder="Welkomstbericht"><?php echo $reis['Welkom_bericht'] ?></textarea>
+                    <textarea rows="1" name="welkomstbericht" placeholder="Welkomstbericht"><?php echo $reis['Welkom_bericht'] ?></textarea>
                     <textarea rows="1" name="historie" placeholder="Historie"><?php echo $reis['Historie'] ?></textarea>
-                    <textarea rows="1" name="wattedoen"
-                        placeholder="Wat te doen"><?php echo $reis['Wat_te_doen'] ?></textarea>
+                    <textarea rows="1" name="wattedoen" placeholder="Wat te doen"><?php echo $reis['Wat_te_doen'] ?></textarea>
                     <input type="text" name="vlag" placeholder="Vlag" value="<?php echo $reis['Vlag'] ?>">
-                    <input type="text" name="achtergrond" placeholder="Achtergrond"
-                        value="<?php echo $reis['Achtergrond'] ?>">
-                    <input type="text" name="kaartafbeelding" placeholder="Kaart-afbeelding"
-                        value="<?php echo $reis['kaart_afbeelding'] ?>">
+                    <input type="text" name="achtergrond" placeholder="Achtergrond" value="<?php echo $reis['Achtergrond'] ?>">
+                    <input type="text" name="kaartafbeelding" placeholder="Kaart-afbeelding" value="<?php echo $reis['kaart_afbeelding'] ?>">
                 </div>
                 <input class="action-button" type="submit" name="submit" value="Bewerken">
             </form>

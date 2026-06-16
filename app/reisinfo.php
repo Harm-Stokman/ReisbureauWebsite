@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 include_once 'includes/pdo.php';
@@ -7,6 +7,7 @@ include_once 'includes/pdo.php';
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,45 +28,43 @@ include_once 'includes/pdo.php';
         ?>
     </header>
 
+    <?php
 
-    <?php 
-    
     $sqlreis = "SELECT * FROM Reizen WHERE Reis_id = ?";
 
     $reisstatement = $pdo->prepare($sqlreis);   // Maak verbinding met de database en bereid de SQL statement voor
     $reisstatement->bindParam(1, $_GET['id']);  // Krijg ID van de link waar je op hebt geklikt (bindParam als placeholder)
     $reisstatement->execute();                  // Voer de SQL statement uit
-
-    $reis = $reisstatement->fetch();
     
-    ?>
+    $reis = $reisstatement->fetch();
 
+    ?>
 
     <main>
         <div class="box-info">
-            <div class="all-bestemming-info" style="--background_img: url('../img/<?php echo $reis['kaart_afbeelding'] ?>');">      <!-- Image changes depending on ID -->
-                <!-- <img src="img/willemstad.png" alt="bestemming image"> -->
+            <div class="all-bestemming-info" style="--background_img: url('../img/<?php echo $reis['kaart_afbeelding'] ?>');">
+                <!-- Image changes depending on ID -->
                 <div class="bestemming-info-header">
                     <img src="img/<?php echo $reis['Vlag'] ?>" alt="Bestemming vlag">
                     <span class="title-block-continent"><?php echo $reis['Continent'] ?></span>
                     <span class="title-block-alt"><?php echo $reis['Bestemming'] ?>, <?php echo $reis['Land'] ?></span>
                     <div class="label-box-alt">
                         <?php
-                            if ($reis['Strand_en_zon'] == 1) {
-                                echo "<div class='index-label'>Strand en zon</div>";
-                            }
-                            if ($reis['Stedentrip'] == 1) {
-                                echo "<div class='index-label'>Stedentrip</div>";
-                            }
-                            if ($reis['Wintersport'] == 1) {
-                                echo "<div class='index-label'>Wintersport</div>";
-                            }
-                            if ($reis['Natuur'] == 1) {
-                                echo "<div class='index-label'>Natuur</div>";
-                            }
-                            if ($reis['Cultuur'] == 1) {
-                                echo "<div class='index-label'>Cultuur</div>";
-                            }
+                        if ($reis['Strand_en_zon'] == 1) {
+                            echo "<div class='index-label'>Strand en zon</div>";
+                        }
+                        if ($reis['Stedentrip'] == 1) {
+                            echo "<div class='index-label'>Stedentrip</div>";
+                        }
+                        if ($reis['Wintersport'] == 1) {
+                            echo "<div class='index-label'>Wintersport</div>";
+                        }
+                        if ($reis['Natuur'] == 1) {
+                            echo "<div class='index-label'>Natuur</div>";
+                        }
+                        if ($reis['Cultuur'] == 1) {
+                            echo "<div class='index-label'>Cultuur</div>";
+                        }
                         ?>
                     </div>
                 </div>
@@ -88,13 +87,11 @@ include_once 'includes/pdo.php';
         </div>
     </main>
 
-
-
     <footer>
-        
-    <?php
-    include_once 'includes/footer.php';
-    ?>
+
+        <?php
+        include_once 'includes/footer.php';
+        ?>
     </footer>
 
 </body>

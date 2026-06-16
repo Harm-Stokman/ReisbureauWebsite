@@ -31,9 +31,7 @@ if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] == true) {
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -63,8 +61,7 @@ if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] == true) {
                     $reizen = $statementOverzicht->fetchAll();
 
                     foreach ($reizen as $reis) { ?>
-                        <option name="bestemming" value="<?php echo $reis['Reis_id'] ?>"> <?php echo $reis['Bestemming'] ?>
-                        </option>
+                        <option name="bestemming" value="<?php echo $reis['Reis_id'] ?>"> <?php echo $reis['Bestemming'] ?> </option>
                     <?php } ?>
                 </select>
                  <input type="hidden" name="user" value="<?php echo $_SESSION['user-id'];?>">

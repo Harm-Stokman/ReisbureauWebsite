@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 include_once 'includes/pdo.php';
@@ -71,13 +71,10 @@ include_once 'includes/pdo.php';
         </div>
     </main>
 
-
-
     <footer>
-        
-    <?php
-    include_once 'includes/footer.php';
-    ?>
+        <?php
+        include_once 'includes/footer.php';
+        ?>
     </footer>
 
 </body>
