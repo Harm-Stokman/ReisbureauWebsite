@@ -79,6 +79,7 @@ if (isset($_POST['submit'])) {
                 </span>
                 <a href="inlog.php"><button>Login</button></a>
             </div>
+            <div class="search-button"><a href="privacypolicy.php">Privacy policy</a></div>
         </div>
     </main>
 </body>
