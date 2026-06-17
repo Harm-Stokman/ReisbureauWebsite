@@ -53,9 +53,7 @@ if (isset($_POST['submit'])) {
     </header>
     <main>
         <div class="user-actions">
-            <span class="title-block">
-                Inloggen
-            </span>
+            <span class="title-block">Inloggen</span>
             <form class="userform" method="post">
                 <div>
                     <input type="text" name="username" placeholder="Gebruikersnaam" require>
@@ -65,11 +63,10 @@ if (isset($_POST['submit'])) {
                 <input class="action-button" type="submit" name="submit" value="Login">
             </form>
             <div class="form-alt">
-                <span>
-                    Geen account?
-                </span>
+                <span>Geen account?</span>
                 <a href="signup.php"><button>Aanmelden</button></a>
             </div>
+            <div class="search-button"><a href="privacypolicy.php">Privacy policy</a></div>
         </div>
     </main>
 </body>
