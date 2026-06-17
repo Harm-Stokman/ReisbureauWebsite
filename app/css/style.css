@@ -970,14 +970,16 @@ footer a {
     transition-duration: 0.3s;
 }
 
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 footer p {
     color: lightgray;
     font-size: 10px;
-}
-
-footer p:hover {
-    color: var(--background);
-    transition-duration: 0.3s;
 }
 
 /* ======================================================================================= */
@@ -1037,10 +1039,10 @@ footer p:hover {
     }
 
     .search-button a {
-        height: 25px;
-        width: 70px;
-        border-radius: 12px;
-        font-size: 15px;
+        padding: 3px;
+        max-width: 100px;
+        border-radius: 15px;
+        font-size: 12px;
     }
 
     .destinations-flex {
