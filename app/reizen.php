@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 include_once 'includes/pdo.php';
@@ -7,6 +7,7 @@ include_once 'includes/pdo.php';
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,8 +27,6 @@ include_once 'includes/pdo.php';
         include_once 'includes/header.php';
         ?>
     </header>
-
-
 
     <main>
         <div class="main-reizen">
@@ -79,7 +78,7 @@ include_once 'includes/pdo.php';
             <div class="destinations-index">
                 <span class="title-block">Vind uw bestemming</span>
                 <div class="destinations-flex">
-                <?php
+                    <?php
 
                     if (!isset($_GET['searchbutton']) || $_GET['search'] == "") {
                         //  Show alles van burgers tenzij hij leeg is.
@@ -101,51 +100,52 @@ include_once 'includes/pdo.php';
                             '%' . $zoekopdracht . '%',
                             '%' . $zoekopdracht . '%'
                         ]);
-                    } 
+                    }
 
                     $reizen = $statement->fetchAll();
 
-                    foreach($reizen as $reis) {
-                            
-                ?>     
-                <div class="one-destination">
-                    <!-- Image en label -->
-                    <div class="image-label">
-                        <div class="label-box">
-                            <?php
-                                if ($reis['Strand_en_zon'] == 1) {
-                                    echo "<div class='index-label'>Strand en zon</div>";
-                                }
-                                if ($reis['Stedentrip'] == 1) {
-                                    echo "<div class='index-label'>Stedentrip</div>";
-                                }
-                                if ($reis['Wintersport'] == 1) {
-                                    echo "<div class='index-label'>Wintersport</div>";
-                                }
-                                if ($reis['Natuur'] == 1) {
-                                    echo "<div class='index-label'>Natuur</div>";
-                                }
-                                if ($reis['Cultuur'] == 1) {
-                                    echo "<div class='index-label'>Cultuur</div>";
-                                }
-                            ?>
+                    foreach ($reizen as $reis) {
+
+                        ?>
+                        <div class="one-destination">
+                            <!-- Image en label -->
+                            <div class="image-label">
+                                <div class="label-box">
+                                    <?php
+                                    if ($reis['Strand_en_zon'] == 1) {
+                                        echo "<div class='index-label'>Strand en zon</div>";
+                                    }
+                                    if ($reis['Stedentrip'] == 1) {
+                                        echo "<div class='index-label'>Stedentrip</div>";
+                                    }
+                                    if ($reis['Wintersport'] == 1) {
+                                        echo "<div class='index-label'>Wintersport</div>";
+                                    }
+                                    if ($reis['Natuur'] == 1) {
+                                        echo "<div class='index-label'>Natuur</div>";
+                                    }
+                                    if ($reis['Cultuur'] == 1) {
+                                        echo "<div class='index-label'>Cultuur</div>";
+                                    }
+                                    ?>
+                                </div>
+                                <?php echo "<img src='img/" . $reis['kaart_afbeelding'] . "' alt='Bestemming image'>" ?>
+                            </div>
+                            <!-- Title betemming en korte info -->
+                            <div class="info-bestemming">
+                                <div class="text-info-bestemming">
+                                    <div class="titel-bestemming"><?php echo $reis['Bestemming'] ?>,
+                                        <?php echo $reis['Land'] ?></div>
+                                    <p> <?php echo $reis['korte_beschrijving'] ?> </p>
+                                </div>
+                                <!-- Vlag en prijs button -->
+                                <div class="vlag-prijs">
+                                    <img src="img/<?php echo $reis['Vlag'] ?>" alt="vlag image">
+                                    <a href="reisinfo.php? id=<?php echo $reis['Reis_id'] ?>">Nu vanaf €<?php echo $reis['Prijs'] ?>,- pp</a>
+                                </div>
+                            </div>
                         </div>
-                        <?php echo "<img src='img/" . $reis['kaart_afbeelding'] . "' alt='Bestemming image'>"?>
-                    </div>
-                    <!-- Title betemming en korte info -->
-                    <div class="info-bestemming">
-                        <div class="text-info-bestemming">
-                            <div class="titel-bestemming"><?php echo $reis['Bestemming'] ?>, <?php echo $reis['Land'] ?></div>
-                            <p> <?php echo $reis['korte_beschrijving'] ?> </p>
-                        </div>
-                        <!-- Vlag en prijs button -->
-                        <div class="vlag-prijs">
-                            <img src="img/<?php echo $reis['Vlag'] ?>" alt="vlag image">
-                            <a href="reisinfo.php? id=<?php echo $reis['Reis_id'] ?>">Nu vanaf €<?php echo $reis['Prijs'] ?>,- pp</a>
-                        </div>
-                    </div>
-                </div>
-                <?php } // einde foreach ?>
+                    <?php } // einde foreach ?>
                 </div>
             </div>
             <div class="vragen-reizen">
@@ -157,12 +157,10 @@ include_once 'includes/pdo.php';
         </div>
     </main>
 
-
-
     <footer>
-    <?php
-    include_once 'includes/footer.php';
-    ?>
+        <?php
+        include_once 'includes/footer.php';
+        ?>
     </footer>
 
 </body>

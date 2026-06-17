@@ -34,7 +34,7 @@ header {
     height: auto;
     color: var(--background);
     display: flex;
-    justify-content: center;
+    align-items: center;
     justify-content: space-between;
     box-shadow: var(--gunpowder) 0px 10px 20px -10px;
     position: relative;
@@ -361,22 +361,6 @@ header a:hover {
     flex-direction: column;
 }
 
-.all-bestemming-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* image truckje */
-    --background_img: url('../img/beach-horizon.jpg');
-    background-image: var(--background_img);
-    background-size: cover;
-    min-height: 600px;
-    margin-top: -50px;
-    /* truckje om content in midden te zetten */
-    display: grid;
-    place-items: center;
-}
-
 .title-block-alt {
     background: var(--dark_blue);
     padding: 10px;
@@ -484,7 +468,6 @@ header a:hover {
     /* truckje om content in midden te zetten */
     display: grid;
     place-items: center;
-    width: 100%;
 }
 
 .all-bestemming-info img {
@@ -998,4 +981,288 @@ footer p {
 footer p:hover {
     color: var(--background);
     transition-duration: 0.3s;
+}
+
+/* ======================================================================================= */
+/* ==================================   RESPONSIVENESS   ================================= */
+/* ======================================================================================= */
+
+@media (max-width: 500px) {
+    /* -------------------------------------------------- HEADER --------------------------------------------------- */
+    header {
+        height: 100px;
+        width: 96%;
+        justify-content: flex-start;
+    }
+
+    header img {
+        width: 50px;
+    }
+
+    header ul {
+        gap: 20px;
+        font-size: 12px;
+    }
+
+    .buttons {
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .buttons a {
+        height: 15px;
+        width: 50px;
+        border-radius: 15px;
+    }
+
+    /* ---------------------------------------------------- INDEX --------------------------------------------------- */
+    .index-header {
+        min-height: 300px;
+    }
+
+    .title-block {
+        padding: 5px;
+        border-radius: 8px;
+        max-width: 300px;
+        font-size: 16px;
+    }
+
+    .find-vacations {
+        width: 400px;
+        height: 50px;
+        border-radius: 8px;
+    }
+
+    .dropdown-selection {
+        font-size: 12px;
+        height: 25px;
+        border-radius: 8px;
+    }
+
+    .search-button a {
+        height: 25px;
+        width: 70px;
+        border-radius: 12px;
+        font-size: 15px;
+    }
+
+    .destinations-flex {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .image-label img {
+        width: 350px;
+        height: 140px;
+    }
+
+    .text-info-bestemming p {
+        font-size: 8px;
+        max-width: 200px;
+    }
+
+    .titel-bestemming {
+        border-radius: 20px;
+        font-size: 18px;
+        max-width: 200px;
+    }
+
+    .vlag-prijs img {
+        width: 70px;
+        height: 50px;
+        border-radius: 8px;
+    }
+
+    .vlag-prijs a {
+        padding: 5px;
+        border-radius: 12px;
+        max-width: 100px;
+        font-size: 10px;
+    }
+
+    .index-label {
+        max-width: 100px;
+        border-radius: 12px;
+        padding: 3px;
+        font-size: 12px;  
+    }
+
+    .action-button {
+        min-width: 120px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    /* -------------------------------------------- ALLE REIZEN ------------------------------------------------ */
+    .main-reizen {
+        gap: 15px;
+    }
+
+    .title-block-alt {
+        padding: 5px;
+        border-radius: 8px;
+        max-width: 250px;
+        font-size: 18px;
+    }
+
+    .specific-search {
+        margin-top: 0px;
+    }
+
+    .searchbar {
+        gap: 15px;
+    }
+
+    .searchbar form {
+        width: 300px;
+        height: 45px;
+        border-radius: 8px;
+    }
+
+    .searchbar input {
+        font-size: 12px;
+        height: 20px;
+        border-radius: 8px;
+    }
+
+    .searchbar .search-button {
+        height: 30px;
+        width: 85px;
+        border-radius: 15px;
+    }
+
+    .searchbar button:hover {
+        background: var(--dark_red);
+        color: var(--sand);
+        transition-duration: 0.3s;
+    }
+
+    .vragen-reizen {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* ---------------------------------------------- REIS INFO ------------------------------------------------ */
+    .all-bestemming-info {
+        min-height: 300px;
+        width: 100%;
+    }
+
+    .bestemming-info-header {
+        gap: 15px;
+        margin-top: 75px;
+    }
+
+    .bestemming-info-header img {
+        width: 70px;
+        height: 50px;
+        border-radius: 10px;
+    }
+
+    .location-info {
+        gap: 15px;
+    }
+
+    .info-block {
+        font-size: 12px;
+    }
+
+    .info-block p {
+        min-width: 150px;
+        max-width: 350px;
+    }
+
+    /* ---------------------------------------------- ABOUT US ------------------------------------------------ */
+    .about-us {
+        gap: 20px;
+    }
+
+    .about-us img {
+        border-radius: 15px;
+        width: 250px;
+        height: auto;
+    }
+
+    .text-box {
+        max-width: 300px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .about-us-title {
+        padding: 3px;
+        max-width: 1000px;
+        font-size: 14px;
+    }
+
+    .text-box p {
+        font-size: 12px
+    }
+
+    /* ---------------------------------------------- BOEKEN ------------------------------------------------ */
+    .boeken-header {
+        min-height: 300px;
+    }
+
+    .boeken-vacations {
+        width: 400px;
+        height: 65px;
+    }
+
+    .dropdown-selection {
+        font-size: 12px;
+        height: 25px;
+        width: auto;
+    }
+
+    .last-check {
+        gap: 25px;
+        padding: 10px;
+    }
+
+    .last-info-boeken {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .prijs-boeken {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .prijs-boeken p {
+        font-size: 10px;
+    }
+
+    /* ---------------------------------------------- FOOTER ------------------------------------------------ */
+    footer {
+        margin-top: 20px;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 50px;
+    }
+
+    .button a {
+        height: 20px;
+        width: 55px;
+        border-radius: 10px;
+        font-size: 10px;
+    }
+
+    footer p {
+        font-size: 8px;
+    }
 }

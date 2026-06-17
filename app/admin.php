@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-
-
 include_once 'includes/pdo.php';
 
 
@@ -25,7 +23,6 @@ if (isset($_GET['id'])) {
     $delete = $pdo->prepare($sql);
     $delete->bindParam(1, $id);
     $delete->execute();
-
 }
 
 ?>
@@ -46,6 +43,7 @@ if (isset($_GET['id'])) {
 </head>
 
 <body>
+    
     <header>
         <img src="img/logo-vaygo.png" alt="logo Vaygo">
 
@@ -53,6 +51,7 @@ if (isset($_GET['id'])) {
         include_once 'includes/header.php';
         ?>
     </header>
+
     <main>
         <div class="admin-page">
             <div class="admin-section">
@@ -96,17 +95,11 @@ if (isset($_GET['id'])) {
                 </span>
                 <div class="admin-field">
                     <?php
-                    $sqlboekingen = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, Boekingen.Aantal_personen, Boekingen.Startdatum, Boekingen.Einddatum
-            FROM Boekingen 
-            JOIN Gebruikers ON Boekingen.`User_id` = Gebruikers.`User_id`
-            JOIN Reizen ON Boekingen.`Reis_id` = Reizen.`Reis_id`";
+                    $sqlboekingen = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, Boekingen.Aantal_personen, Boekingen.Startdatum, Boekingen.Einddatum FROM Boekingen JOIN Gebruikers ON Boekingen.`User_id` = Gebruikers.`User_id` JOIN Reizen ON Boekingen.`Reis_id` = Reizen.`Reis_id`";
                     $bookingstatement = $pdo->prepare($sqlboekingen);
                     $bookingstatement->execute();
                     $boekingen = $bookingstatement->fetchAll();
                     if ($bookingstatement->rowCount() > 0) {
-
-
-
                         foreach ($boekingen as $boeking) { ?>
                             <div class="admin-booking-block">
                                 <div class="booking-info">
@@ -125,6 +118,7 @@ if (isset($_GET['id'])) {
             </div>
         </div>
     </main>
+
     <footer>
         <?php
         include_once 'includes/footer.php';

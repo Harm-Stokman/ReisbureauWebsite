@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 include_once 'includes/pdo.php';
@@ -7,6 +7,7 @@ include_once 'includes/pdo.php';
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +31,7 @@ include_once 'includes/pdo.php';
 
     <main>
         <div class="privacy-policy">
-            <span  class="title-block">Vaygo's policy</span>
+            <span class="title-block">Vaygo's policy</span>
             <div class="last-update">
                 <span class="about-us-title">Laatste update aan onze policy</span>
                 <p>Vrijdag 12 juni 2026 om 12:28</p>
@@ -98,12 +99,11 @@ include_once 'includes/pdo.php';
     </main>
 
     <footer>
-        
-    <?php
-    include_once 'includes/footer.php';
-    ?>
+        <?php
+        include_once 'includes/footer.php';
+        ?>
     </footer>
-    
+
 </body>
 
 </html>

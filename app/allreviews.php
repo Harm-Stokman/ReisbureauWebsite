@@ -1,10 +1,11 @@
-<?php 
+<?php
 session_start();
 include_once 'includes/pdo.php';
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +13,7 @@ include_once 'includes/pdo.php';
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -28,35 +27,32 @@ include_once 'includes/pdo.php';
 
     </header>
 
-
-
     <main>
-        
- <div class="reviews-index">
+
+        <div class="reviews-index">
             <span class="title-block">Alle reviews</span>
             <a href="review.php"><button class="action-button">Review schrijven?</button></a>
-            <?php 
-            $sqlrecensie = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, recensies.Bericht, recensies.Beoordeling
-            FROM recensies 
-            JOIN Gebruikers ON recensies.`User_id` = Gebruikers.`User_id`
-            JOIN Reizen ON recensies.`Reis_id` = Reizen.`Reis_id`";
+            <?php
+            $sqlrecensie = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, recensies.Bericht, recensies.Beoordeling FROM recensies JOIN Gebruikers ON recensies.`User_id` = Gebruikers.`User_id` JOIN Reizen ON recensies.`Reis_id` = Reizen.`Reis_id`";
+
             $reviewstatement = $pdo->prepare($sqlrecensie);
             $reviewstatement->execute();
             $reviews = $reviewstatement->fetchAll();
 
             foreach ($reviews as $review) { ?>
                 <div class="one-review">
-                <div class="review-header">
-                    <div class="review-info">
-                        <span><?php echo  $review['Gebruikersnaam'] ?> </span>
-                        <span>Review over de reis naar <?php echo $review['Bestemming'];?></span>
+                    <div class="review-header">
+                        <div class="review-info">
+                            <span><?php echo $review['Gebruikersnaam'] ?> </span>
+                            <span>Review over de reis naar <?php echo $review['Bestemming']; ?></span>
+                        </div>
+                        <span><?php echo $review['Beoordeling'] ?> / 5</span>
                     </div>
-                    <span><?php echo $review['Beoordeling'] ?> / 5</span>
+                    <p><?php echo $review['Bericht'] ?></p>
                 </div>
-                <p><?php echo $review['Bericht'] ?></p>
-            </div>
-           <?php } ?>
+            <?php } ?>
         </div>
     </main>
 </body>
+
 </html>

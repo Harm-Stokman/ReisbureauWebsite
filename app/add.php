@@ -15,7 +15,7 @@ if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] == true) {
 
 if (isset($_POST['submit'])) {
 
-header('Location: admin.php');
+    header('Location: admin.php');
 
     if ($_POST['strandzon'] == null) {
         $_POST['strandzon'] = 0;
@@ -37,9 +37,7 @@ header('Location: admin.php');
         $_POST['cultuur'] = 0;
     }
 
-    $sqltoevoegen = "INSERT INTO Reizen (Bestemming, Land, korte_beschrijving, Prijs, Vlag, Continent, Strand_en_zon, 
-Stedentrip, Wintersport, Natuur, Cultuur, Welkom_bericht, Historie, Wat_te_doen, Achtergrond, kaart_afbeelding)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+    $sqltoevoegen = "INSERT INTO Reizen (Bestemming, Land, korte_beschrijving, Prijs, Vlag, Continent, Strand_en_zon, Stedentrip, Wintersport, Natuur, Cultuur, Welkom_bericht, Historie, Wat_te_doen, Achtergrond, kaart_afbeelding) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
 
     $addstatement = $pdo->prepare($sqltoevoegen);
     $addstatement->bindParam(1, $_POST['bestemming']);
@@ -74,9 +72,7 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
 <body>

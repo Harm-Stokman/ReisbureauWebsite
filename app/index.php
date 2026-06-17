@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include_once 'includes/pdo.php';
 
@@ -6,6 +6,7 @@ include_once 'includes/pdo.php';
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,8 +27,9 @@ include_once 'includes/pdo.php';
         ?>
 
     </header>
+
     <main>
-        <div class="index-header" >
+        <div class="index-header">
             <div>
                 <span class="title-block">Vind jou vakantie</span>
                 <div class="find-vacations">
@@ -59,53 +61,54 @@ include_once 'includes/pdo.php';
             <span class="title-block">Vind uw bestemming</span>
             <div class="destinations-flex">
 
-                
+
 
                 <?php
 
-                    //  Show alles van burgers tenzij hij leeg is.
-                    //  Define SQL statement
-                    $sql = "SELECT * FROM Reizen LIMIT 4";
+                //  Show alles van burgers tenzij hij leeg is.
+                //  Define SQL statement
+                $sql = "SELECT * FROM Reizen LIMIT 4";
 
-                    //  Prepare SQL statement
-                    $statement = $pdo->prepare($sql);
+                //  Prepare SQL statement
+                $statement = $pdo->prepare($sql);
 
-                    //  Exacute SQL statement
-                    $statement->execute();
+                //  Exacute SQL statement
+                $statement->execute();
 
-                    $reizen = $statement->fetchAll();
+                $reizen = $statement->fetchAll();
 
-                    foreach($reizen as $reis) { ?>
-                    
+                foreach ($reizen as $reis) { ?>
+
                     <div class="one-destination">
                         <!-- Image en label -->
                         <div class="image-label">
                             <div class="label-box">
                                 <?php
-                                    if ($reis['Strand_en_zon'] == 1) {
-                                        echo "<div class='index-label'>Strand en zon</div>";
-                                    }
-                                    if ($reis['Stedentrip'] == 1) {
-                                        echo "<div class='index-label'>Stedentrip</div>";
-                                    }
-                                    if ($reis['Wintersport'] == 1) {
-                                        echo "<div class='index-label'>Wintersport</div>";
-                                    }
-                                    if ($reis['Natuur'] == 1) {
-                                        echo "<div class='index-label'>Natuur</div>";
-                                    }
-                                    if ($reis['Cultuur'] == 1) {
-                                        echo "<div class='index-label'>Cultuur</div>";
-                                    }
+                                if ($reis['Strand_en_zon'] == 1) {
+                                    echo "<div class='index-label'>Strand en zon</div>";
+                                }
+                                if ($reis['Stedentrip'] == 1) {
+                                    echo "<div class='index-label'>Stedentrip</div>";
+                                }
+                                if ($reis['Wintersport'] == 1) {
+                                    echo "<div class='index-label'>Wintersport</div>";
+                                }
+                                if ($reis['Natuur'] == 1) {
+                                    echo "<div class='index-label'>Natuur</div>";
+                                }
+                                if ($reis['Cultuur'] == 1) {
+                                    echo "<div class='index-label'>Cultuur</div>";
+                                }
                                 ?>
                             </div>
-                            <?php echo "<img src='img/" . $reis['kaart_afbeelding'] . "' alt='Bestemming image'>"?>
+                            <?php echo "<img src='img/" . $reis['kaart_afbeelding'] . "' alt='Bestemming image'>" ?>
                         </div>
                         <!-- Title betemming en korte info -->
                         <div class="info-bestemming">
                             <div class="text-info-bestemming">
-                                <div class="titel-bestemming"><?php echo $reis['Bestemming'] ?>, <?php echo $reis['Land'] ?></div>
-                                <p> <?php echo $reis['korte_beschrijving'] ?> </p>
+                                <div class="titel-bestemming"><?php echo $reis['Bestemming'] ?>, <?php echo $reis['Land'] ?>
+                                </div>
+                                <p><?php echo $reis['korte_beschrijving'] ?></p>
                             </div>
                             <!-- Vlag en prijs button -->
                             <div class="vlag-prijs">
@@ -117,46 +120,45 @@ include_once 'includes/pdo.php';
 
                 <?php } ?>
 
-        </div>
+            </div>
         </div>
 
         <div class="reviews-index">
             <span class="title-block">Reviews</span>
 
-            <?php 
-            
+            <?php
+
             $sqlrecensie = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, recensies.Bericht, recensies.Beoordeling
             FROM recensies 
             JOIN Gebruikers ON recensies.`User_id` = Gebruikers.`User_id`
             JOIN Reizen ON recensies.`Reis_id` = Reizen.`Reis_id`
             LIMIT 3";
+
             $reviewstatement = $pdo->prepare($sqlrecensie);
             $reviewstatement->execute();
             $reviews = $reviewstatement->fetchAll();
 
             foreach ($reviews as $review) { ?>
                 <div class="one-review">
-                <div class="review-header">
-                    <div class="review-info">
-                        <span><?php echo  $review['Gebruikersnaam'] ?> </span>
-                        <span>Review over de reis naar <?php echo $review['Bestemming'];?></span>
+                    <div class="review-header">
+                        <div class="review-info">
+                            <span><?php echo $review['Gebruikersnaam'] ?> </span>
+                            <span>Review over de reis naar <?php echo $review['Bestemming']; ?></span>
+                        </div>
+                        <span><?php echo $review['Beoordeling'] ?> / 5</span>
                     </div>
-                    <span><?php echo $review['Beoordeling'] ?> / 5</span>
+                    <p><?php echo $review['Bericht'] ?></p>
                 </div>
-                <p><?php echo $review['Bericht'] ?></p>
-            </div>
-           <?php } ?>
+            <?php } ?>
             <a href="allreviews.php"><button class="action-button">Zie alle reviews</button></a>
         </div>
     </main>
 
-
-
     <footer>
-        
-    <?php
-    include_once 'includes/footer.php';
-    ?>
+
+        <?php
+        include_once 'includes/footer.php';
+        ?>
     </footer>
 
 </body>

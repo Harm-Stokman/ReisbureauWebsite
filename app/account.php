@@ -31,9 +31,7 @@ if (isset($_GET['id'])) {
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -56,8 +54,8 @@ if (isset($_GET['id'])) {
 
         ?>
 
-
     </header>
+
     <main>
         <div class="admin-page">
             <h1>Accountinformatie</h1>
@@ -70,19 +68,13 @@ if (isset($_GET['id'])) {
             <h1>Uw boekingen</h1>
             <div class="admin-field">
                 <?php
-                $sqlboekingen = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, Boekingen.Aantal_personen, Boekingen.Startdatum, Boekingen.Einddatum, Boekingen.Boeking_id
-            FROM Boekingen 
-            JOIN Gebruikers ON Boekingen.`User_id` = Gebruikers.`User_id` AND Gebruikers.`User_id` = ?
-            JOIN Reizen ON Boekingen.`Reis_id` = Reizen.`Reis_id`";
+                $sqlboekingen = "SELECT Gebruikers.Gebruikersnaam, Reizen.Bestemming, Boekingen.Aantal_personen, Boekingen.Startdatum, Boekingen.Einddatum, Boekingen.Boeking_id FROM Boekingen JOIN Gebruikers ON Boekingen.`User_id` = Gebruikers.`User_id` AND Gebruikers.`User_id` = ? JOIN Reizen ON Boekingen.`Reis_id` = Reizen.`Reis_id`";
                 $bookingstatement = $pdo->prepare($sqlboekingen);
                 $bookingstatement->bindParam(1, $id);
                 $bookingstatement->execute();
                 $boekingen = $bookingstatement->fetchAll();
 
                 if ($bookingstatement->rowCount() > 0) {
-
-
-
                     foreach ($boekingen as $boeking) { ?>
                         <div class="admin-booking-block">
                             <div class="booking-info">
@@ -91,7 +83,7 @@ if (isset($_GET['id'])) {
                                 <span>Aantal personen: <?php echo $boeking['Aantal_personen'] ?> </span>
                                 <span>Duur: <?php echo $boeking['Startdatum'] ?> tot <?php echo $boeking['Einddatum'] ?></span>
                             </div>
-                            <a href="account.php? id=<?php echo $boeking['Boeking_id']?>"><button class="delete-button">Reis annuleren</button></a>
+                            <a href="account.php? id=<?php echo $boeking['Boeking_id'] ?>"><button class="delete-button">Reis annuleren</button></a>
                         </div>
                     <?php }
                 } else {
