@@ -61,6 +61,7 @@ if (isset($_POST['submit'])) {
                     <input type="text" name="username" placeholder="Gebruikersnaam" require>
                     <input type="password" name="password" placeholder="Wachtwoord" require>
                 </div>
+                <a href="herstellen.php">Wachtwoord vergeten?</a>
                 <input class="action-button" type="submit" name="submit" value="Login">
             </form>
             <div class="form-alt">
