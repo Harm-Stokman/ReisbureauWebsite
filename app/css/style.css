@@ -1023,8 +1023,8 @@ footer p:hover {
     .title-block {
         padding: 5px;
         border-radius: 8px;
-        max-width: 250px;
-        font-size: 18px;
+        max-width: 300px;
+        font-size: 16px;
     }
 
     .find-vacations {
@@ -1177,5 +1177,92 @@ footer p:hover {
     .info-block p {
         min-width: 150px;
         max-width: 350px;
+    }
+
+    /* ---------------------------------------------- ABOUT US ------------------------------------------------ */
+    .about-us {
+        gap: 20px;
+    }
+
+    .about-us img {
+        border-radius: 15px;
+        width: 250px;
+        height: auto;
+    }
+
+    .text-box {
+        max-width: 300px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .about-us-title {
+        padding: 3px;
+        max-width: 1000px;
+        font-size: 14px;
+    }
+
+    .text-box p {
+        font-size: 12px
+    }
+
+    /* ---------------------------------------------- BOEKEN ------------------------------------------------ */
+    .boeken-header {
+        min-height: 300px;
+    }
+
+    .boeken-vacations {
+        width: 400px;
+        height: 65px;
+    }
+
+    .dropdown-selection {
+        font-size: 12px;
+        height: 25px;
+        width: auto;
+    }
+
+    .last-check {
+        gap: 25px;
+        padding: 10px;
+    }
+
+    .last-info-boeken {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .prijs-boeken {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .prijs-boeken p {
+        font-size: 10px;
+    }
+
+    /* ---------------------------------------------- FOOTER ------------------------------------------------ */
+    footer {
+        margin-top: 20px;
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 50px;
+    }
+
+    .button a {
+        height: 20px;
+        width: 55px;
+        border-radius: 10px;
+        font-size: 10px;
+    }
+
+    footer p {
+        font-size: 8px;
     }
 }
