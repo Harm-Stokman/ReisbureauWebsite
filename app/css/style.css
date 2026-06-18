@@ -295,6 +295,33 @@ header a:hover {
     flex-direction: column;
 }
 
+.go-to-top-button.show {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
+    position: fixed;
+    bottom: 75px;
+    right: 30px;
+    font-size: 15px;
+    padding: 10px;
+    width: 40px;
+    z-index: 3;
+    color: var(--sand);
+    background: var(--dark_red);
+    border: 2px solid var(--gunpowder);
+    border-radius: 10px;
+}
+
+.go-to-top-button {
+    visibility: hidden;
+    opacity:0;
+}
+
+.go-to-top-button.show:hover {
+    cursor: pointer;
+    background: var(--red);
+    transition-duration: 0.3s;
+}
 
 
 

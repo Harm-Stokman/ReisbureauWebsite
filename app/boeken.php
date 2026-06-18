@@ -92,7 +92,27 @@ include_once 'includes/pdo.php';
                 <input class="action-button" type="submit" name="">
             </div>
         </form>
+        <button class="go-to-top-button" id="goBackToTop">↑</button>
     </main>
+
+    <script>
+        const goBackToTopButton = document.getElementById("goBackToTop");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                goBackToTopButton.classList.add("show");
+            } else {
+                goBackToTopButton.classList.remove("show");
+            }
+        });
+
+        goBackToTopButton.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
 
     <footer>
 
