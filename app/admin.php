@@ -4,7 +4,7 @@ session_start();
 include_once 'includes/pdo.php';
 
 
-if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] == true) {
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
     if ($_SESSION['username'] === "Admin") {
 
     } else {
