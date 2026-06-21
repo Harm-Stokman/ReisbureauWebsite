@@ -2,7 +2,7 @@
 session_start();
 include_once 'includes/pdo.php';
 
-if (isset($_SESSION['logged-in']) && $_SESSION['logged-in'] = true) {
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] = true) {
 
 } else {
     header('Location: inlog.php');
@@ -46,7 +46,7 @@ if (isset($_GET['id'])) {
         WHERE User_id = ?";
 
         $userstatement = $pdo->prepare($usersql);
-        $userstatement->bindParam(1, $_SESSION['user-id']);
+        $userstatement->bindParam(1, $_SESSION['user_id']);
         $userstatement->execute();
         $user = $userstatement->fetch();
 

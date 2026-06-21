@@ -17,8 +17,8 @@ if (isset($_POST['submit'])) {
 
         if ($userstatement->rowCount() > 0) {
             if ($username == $user['Gebruikersnaam'] && $password == $user['Wachtwoord']) {
-                $_SESSION['user-id'] = $user['User_id'];
-                $_SESSION['logged-in'] = true;
+                $_SESSION['user_id'] = $user['User_id'];
+                $_SESSION['logged_in'] = true;
                 $_SESSION['username'] = $user['Gebruikersnaam'];
                 header('Location: index.php');
             }

@@ -636,6 +636,13 @@ header a:hover {
     font-size: 20px;
 }
 
+.boeken-small-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+}
+
 
 
 /* ======================================================================================= */
@@ -1268,7 +1275,7 @@ footer p {
     .prijs-boeken p {
         font-size: 10px;
     }
-
+    
     /* ---------------------------------------------- FOOTER ------------------------------------------------ */
     footer {
         margin-top: 20px;
