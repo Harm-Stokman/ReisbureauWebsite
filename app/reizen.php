@@ -33,37 +33,30 @@ include_once 'includes/pdo.php';
             <div class="reizen-header">
                 <div>
                     <span class="title-block">Zoek jou vakantie</span>
-                    <div class="find-vacations">
-                        <select class="dropdown-selection" name="type">
+                <div class="find-vacations">
+                    <form class="searchbar" method="get" name="filterbar" action="reizen.php">
+                        <select class="dropdown-selection" name="typevacation">
                             <option value="">Type vakantie</option>
-                            <option value="Strand-en-zon">Strand en zon</option>
-                            <option value="Strand-en-zon">Natuur</option>
-                            <option value="Strand-en-zon">Cultuur</option>
-                            <option value="Strand-en-zon">Stedentrip</option>
-                            <option value="Strand-en-zon">Wintersport</option>
+                            <option value="Strand_en_zon">Strand en zon</option>
+                            <option value="Natuur">Natuur</option>
+                            <option value="Cultuur">Cultuur</option>
+                            <option value="Stedentrip">Stedentrip</option>
+                            <option value="Wintersport">Wintersport</option>
                         </select>
                         <select class="dropdown-selection" name="continent">
                             <option value="">Continent</option>
-                            <option value="azie">Azië</option>
-                            <option value="europa">Europa</option>
-                            <option value="afrika">Afrika</option>
-                            <option value="noord-amerika">Noord-Amerika</option>
-                            <option value="zuid-amerika">Zuid-Amerika</option>
-                            <option value="oceanie">Oceanië</option>
+                            <option value="Azië">Azië</option>
+                            <option value="Europa">Europa</option>
+                            <option value="Afrika">Afrika</option>
+                            <option value="Noord-Amerika">Noord-Amerika</option>
+                            <option value="Zuid-Amerika">Zuid-Amerika</option>
+                            <option value="Oceanie">Oceanië</option>
                         </select>
-                        <select class="dropdown-selection" name="continent">
-                            <option value="">Prijs</option>
-                            <option value="prijs-500">€200-500</option>
-                            <option value="prijs-800">€500-800</option>
-                            <option value="prijs-1000">€800-1000</option>
-                            <option value="prijs-1500">€1000-1500</option>
-                            <option value="prijs-2000">€1500-2000</option>
-                            <option value="prijs-2000+">€2000 of hoger</option>
-                        </select>
-                        <div class="search-button">
-                            <a href="index.php">Zoeken</a>
+                        <div class="searchbar">
+                            <input class="search-button" type="submit" name="filterbutton">
                         </div>
-                    </div>
+                    </form>
+                </div>
                 </div>
             </div>
             <div class="specific-search">
@@ -80,72 +73,11 @@ include_once 'includes/pdo.php';
                 <div class="destinations-flex">
                     <?php
 
-                    if (!isset($_GET['searchbutton']) || $_GET['search'] == "") {
-                        //  Show alles van burgers tenzij hij leeg is.
-                        //  Define SQL statement
-                        $sql = "SELECT * FROM Reizen";
+                        include_once 'includes/filterbar.php';
 
-                        //  Prepare SQL statement
-                        $statement = $pdo->prepare($sql);
+                    ?>
 
-                        //  Exacute SQL statement
-                        $statement->execute();
-                    } else {
-                        $zoekopdracht = $_GET['search'] ?? '';
 
-                        $sql = 'SELECT * FROM Reizen WHERE Bestemming LIKE ?  OR Land LIKE ? OR Continent LIKE ?';
-                        $statement = $pdo->prepare($sql);
-                        $statement->execute([
-                            '%' . $zoekopdracht . '%',
-                            '%' . $zoekopdracht . '%',
-                            '%' . $zoekopdracht . '%'
-                        ]);
-                    }
-
-                    $reizen = $statement->fetchAll();
-
-                    foreach ($reizen as $reis) {
-
-                        ?>
-                        <div class="one-destination">
-                            <!-- Image en label -->
-                            <div class="image-label">
-                                <div class="label-box">
-                                    <?php
-                                    if ($reis['Strand_en_zon'] == 1) {
-                                        echo "<div class='index-label'>Strand en zon</div>";
-                                    }
-                                    if ($reis['Stedentrip'] == 1) {
-                                        echo "<div class='index-label'>Stedentrip</div>";
-                                    }
-                                    if ($reis['Wintersport'] == 1) {
-                                        echo "<div class='index-label'>Wintersport</div>";
-                                    }
-                                    if ($reis['Natuur'] == 1) {
-                                        echo "<div class='index-label'>Natuur</div>";
-                                    }
-                                    if ($reis['Cultuur'] == 1) {
-                                        echo "<div class='index-label'>Cultuur</div>";
-                                    }
-                                    ?>
-                                </div>
-                                <?php echo "<img src='img/" . $reis['kaart_afbeelding'] . "' alt='Bestemming image'>" ?>
-                            </div>
-                            <!-- Title betemming en korte info -->
-                            <div class="info-bestemming">
-                                <div class="text-info-bestemming">
-                                    <div class="titel-bestemming"><?php echo $reis['Bestemming'] ?>,
-                                        <?php echo $reis['Land'] ?></div>
-                                    <p> <?php echo $reis['korte_beschrijving'] ?> </p>
-                                </div>
-                                <!-- Vlag en prijs button -->
-                                <div class="vlag-prijs">
-                                    <img src="img/<?php echo $reis['Vlag'] ?>" alt="vlag image">
-                                    <a href="reisinfo.php? id=<?php echo $reis['Reis_id'] ?>">Nu vanaf €<?php echo $reis['Prijs'] ?>,- pp</a>
-                                </div>
-                            </div>
-                        </div>
-                    <?php } // einde foreach ?>
                 </div>
             </div>
             <div class="vragen-reizen">
