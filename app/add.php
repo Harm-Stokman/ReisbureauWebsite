@@ -37,8 +37,7 @@ if (isset($_POST['submit'])) {
         $_POST['cultuur'] = 0;
     }
 
-    $sqltoevoegen = "INSERT INTO Reizen (Bestemming, Land, korte_beschrijving, Prijs, Vlag, Continent, Strand_en_zon, Stedentrip, Wintersport, Natuur, Cultuur, Welkom_bericht, Historie, Wat_te_doen, Achtergrond, kaart_afbeelding) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
-
+    $sqltoevoegen = "INSERT INTO Reizen (Bestemming, Land, korte_beschrijving, Prijs, Vlag, Continent, Strand_en_zon, Stedentrip, Wintersport, Natuur, Cultuur, Welkom_bericht, Historie, Wat_te_doen, kaart_afbeelding) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
     $addstatement = $pdo->prepare($sqltoevoegen);
     $addstatement->bindParam(1, $_POST['bestemming']);
     $addstatement->bindParam(2, $_POST['land']);
@@ -54,8 +53,7 @@ if (isset($_POST['submit'])) {
     $addstatement->bindParam(12, $_POST['welkomstbericht']);
     $addstatement->bindParam(13, $_POST['historie']);
     $addstatement->bindParam(14, $_POST['wattedoen']);
-    $addstatement->bindParam(15, $_POST['achtergrond']);
-    $addstatement->bindParam(16, $_POST['kaartafbeelding']);
+    $addstatement->bindParam(15, $_POST['kaartafbeelding']);
 
     $addstatement->execute();
 }
@@ -72,7 +70,9 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -119,7 +119,6 @@ if (isset($_POST['submit'])) {
                     <textarea rows="1" name="historie" placeholder="Historie"></textarea>
                     <textarea rows="1" name="wattedoen" placeholder="Wat te doen"></textarea>
                     <input type="text" name="vlag" placeholder="Vlag">
-                    <input type="text" name="achtergrond" placeholder="Achtergrond">
                     <input type="text" name="kaartafbeelding" placeholder="Kaart-afbeelding">
                 </div>
                 <input class="action-button" type="submit" name="submit" value="Toevoegen">
