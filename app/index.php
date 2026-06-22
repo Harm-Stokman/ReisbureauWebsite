@@ -30,7 +30,7 @@ include_once 'includes/pdo.php';
 
     <main>
         <div class="index-header">
-            <div>
+            <div class="all-index-header">
                 <span class="title-block">Vind jou vakantie</span>
                 <div class="find-vacations">
                     <form class="searchbar" method="get" name="filterbar" action="reizen.php">
@@ -56,6 +56,7 @@ include_once 'includes/pdo.php';
                         </div>
                     </form>
                 </div>
+                <p>Voer beide velden in</p>
             </div>
         </div>
 

@@ -110,6 +110,11 @@ header a:hover {
     place-items: center;
 }
 
+.all-index-header p {
+    color: gray;
+    font-size: 10px;
+}
+
 .title-block {
     background: var(--dark_red);
     padding: 10px;
@@ -446,6 +451,11 @@ header a:hover {
     text-align: center;
     display: grid;
     place-items: center;
+}
+
+.reizen-header p {
+    color: gray;
+    font-size: 10px;
 }
 
 .searchbar {

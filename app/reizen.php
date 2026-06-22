@@ -58,6 +58,7 @@ include_once 'includes/pdo.php';
                     </form>
                 </div>
                 </div>
+                <p>Voer beide velden in</p>
             </div>
             <div class="specific-search">
                 <span class="title-block-alt">Zoek iets specifieks</span>
