@@ -16,9 +16,6 @@ include_once 'includes/pdo.php';
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
-
-<body>
-
     <header>
         <img src="img/logo-vaygo.png" alt="logo Vaygo">
 
@@ -27,12 +24,29 @@ include_once 'includes/pdo.php';
         ?>
 
     </header>
+    
+    <?php
+        if (isset($_POST['submit'])) {
+            $mail = $_POST['email'];
+            $title = $_POST['title'];
+            $message = $_POST['message'];
+
+            $sql = 'INSERT INTO Contactformulieren (Emailadres, Onderwerp, Bericht)
+            VALUES (?, ?, ?)';
+
+            $statement = $pdo->prepare($sql);
+            $statement->bindParam(1, $mail);
+            $statement->bindParam(2, $title);
+            $statement->bindParam(3, $message);
+            $statement->execute();
+        }
+    ?>
 
     <div class="user-actions">
         <span class="title-block">
             Vraag het Vaygo
         </span>
-        <form class="userform">
+        <form class="userform" header="index.php" method="post">
             <div>
                 <input type="email" name="email" placeholder="Uw E-mailadres">
                 <input type="text" name="title" placeholder="Onderwerp">
@@ -41,7 +55,6 @@ include_once 'includes/pdo.php';
             <input class="action-button" type="submit" name="submit" value="Verzenden">
         </form>
     </div>
-
 
     <main>
 
