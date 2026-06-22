@@ -33,26 +33,28 @@ include_once 'includes/pdo.php';
             <div>
                 <span class="title-block">Vind jou vakantie</span>
                 <div class="find-vacations">
-                    <select class="dropdown-selection" name="type">
-                        <option value="">Type vakantie</option>
-                        <option value="Strand-en-zon">Strand en zon</option>
-                        <option value="Natuur">Natuur</option>
-                        <option value="Cultuur">Cultuur</option>
-                        <option value="Stedentrip">Stedentrip</option>
-                        <option value="Wintersport">Wintersport</option>
-                    </select>
-                    <select class="dropdown-selection" name="continent">
-                        <option value="">Continent</option>
-                        <option value="azie">Azië</option>
-                        <option value="europa">Europa</option>
-                        <option value="afrika">Afrika</option>
-                        <option value="noord-amerika">Noord-Amerika</option>
-                        <option value="zuid-amerika">Zuid-Amerika</option>
-                        <option value="oceanie">Oceanië</option>
-                    </select>
-                    <div class="search-button">
-                        <a href="index.php">Zoeken</a>
-                    </div>
+                    <form class="searchbar" method="get" name="filterbar" action="reizen.php">
+                        <select class="dropdown-selection" name="typevacation">
+                            <option value="">Type vakantie</option>
+                            <option value="Strand_en_zon">Strand en zon</option>
+                            <option value="Natuur">Natuur</option>
+                            <option value="Cultuur">Cultuur</option>
+                            <option value="Stedentrip">Stedentrip</option>
+                            <option value="Wintersport">Wintersport</option>
+                        </select>
+                        <select class="dropdown-selection" name="continent">
+                            <option value="">Continent</option>
+                            <option value="Azië">Azië</option>
+                            <option value="Europa">Europa</option>
+                            <option value="Afrika">Afrika</option>
+                            <option value="Noord-Amerika">Noord-Amerika</option>
+                            <option value="Zuid-Amerika">Zuid-Amerika</option>
+                            <option value="Oceanie">Oceanië</option>
+                        </select>
+                        <div class="searchbar">
+                            <input class="search-button" type="submit" name="filterbutton">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
