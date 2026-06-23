@@ -94,7 +94,6 @@ include_once 'includes/pdo.php';
                 <p>Wij kunnen dit Privacybeleid op ieder moment aanpassen.</p>
                 <p>Bij grote wijzigingen zullen we waarschijnlijk vergeten erover te berichten, of gewoon hopen dat niemand het merkt.</p>
             </div>
-            <img src="img/smiley.png" alt="smiley">
         </div>
         <button class="go-to-top-button" id="goBackToTop">↑</button>
     </main>
