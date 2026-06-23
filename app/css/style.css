@@ -897,6 +897,13 @@ header a:hover {
     gap: 30px;
 }
 
+
+.password_input .input_icon {
+    position: absolute;
+}
+
+
+
 .userform div {
     display: flex;
     flex-direction: column;
@@ -960,7 +967,6 @@ select {
     cursor: pointer;
     transition-duration: 0.3s;
 }
-
 
 /* ======================================================================================= */
 /* =======================================   USER   ====================================== */

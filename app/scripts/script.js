@@ -20,3 +20,12 @@ function calculatePrice(amount) {
     document.getElementById("prijs").innerText = "€" + ((peopleAmount.value * price.value) + 15);
     // window.alert(document.getElementById("prijs").value);
 }
+
+function showPassword() {
+    if (document.getElementById("pass").type == "password") {
+        document.getElementById("pass").type = "text";
+    } else {
+        document.getElementById("pass").type = "password";
+    }
+}
+

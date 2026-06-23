@@ -39,6 +39,7 @@ if (isset($_POST['submit'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <script src="scripts/script.js"></script>
 </head>
 
 <body>
@@ -57,8 +58,9 @@ if (isset($_POST['submit'])) {
             <form class="userform" method="post">
                 <div>
                     <input type="text" name="username" placeholder="Gebruikersnaam" require>
-                    <input type="password" name="password" placeholder="Wachtwoord" require>
+                     <input type="password" id="pass" name="password" placeholder="Wachtwoord" require>
                 </div>
+                 <img class="input_icon" src="img/eye-final.png" alt="input_icon" onclick="showPassword()">
                 <a href="herstellen.php">Wachtwoord vergeten?</a>
                 <input class="action-button" type="submit" name="submit" value="Login">
             </form>
