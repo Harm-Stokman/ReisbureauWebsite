@@ -56,7 +56,7 @@ if (isset($_POST['reset'])) {
             
                 $mail = $_POST['email'];
 
-                $recoverysql = "SELECT * FROM Gebruikers 
+                $recoverysql = "SELECT Emailadres FROM Gebruikers 
                 WHERE Emailadres = ?";
 
                 $recovery = $pdo->prepare($recoverysql);
@@ -78,7 +78,6 @@ if (isset($_POST['reset'])) {
 
                     if ($getcodestatement->rowCount() == 0) {
                         // voor als er een nieuwe code aangemaakt moet worden
-                        $email = $recovereduser['Emailadres'];
                         $date = date("Y-m-d", strtotime('tomorrow'));
                         $key = $_POST['key'];
 
@@ -87,7 +86,7 @@ if (isset($_POST['reset'])) {
                         $keystatement = $pdo->prepare($sqlkey);
                         $keystatement->bindParam(1, $key);
                         $keystatement->bindParam(2, $date);
-                        $keystatement->bindParam(3, $email);
+                        $keystatement->bindParam(3, $mail);
                         $keystatement->execute();
                         echo "Uw code: " . $key;
 

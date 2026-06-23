@@ -52,7 +52,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
                 <select type="text" name="reis">
                     <?php
 
-                    $sql = "SELECT * FROM Reizen";
+                    $sql = "SELECT Reis_id, Bestemming FROM Reizen";
 
                     $statementOverzicht = $pdo->prepare($sql);
 

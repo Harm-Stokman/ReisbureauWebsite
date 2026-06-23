@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
     if ($_POST['username'] !== "Admin" && $_POST['username'] !== "admin") {
         $usermail = $_POST['email'];
 
-        $sqlusercheck = "SELECT * FROM Gebruikers WHERE Emailadres = ?";
+        $sqlusercheck = "SELECT User_id FROM Gebruikers WHERE Emailadres = ?";
         $usercheck = $pdo->prepare($sqlusercheck);
         $usercheck->bindParam(1, $usermail);
         $usercheck->execute();
@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
                 $useradd->bindParam(2, $_POST['email']);
                 $useradd->bindParam(3, $_POST['password']);
                 $useradd->execute();
-                header('Location: index.php');
+                header('Location: inlog.php');
             } else {
                 echo "Wachtwoorden komt niet overeen";
             }

@@ -40,7 +40,7 @@ $id = $_POST['id'];
         $_POST['cultuur'] = 0;
     }
 
-    $sqlupdate = " UPDATE Reizen SET Bestemming = ?, Land = ?, korte_beschrijving = ?, Prijs = ?, Vlag = ?, Continent = ?, Strand_en_zon = ?, Stedentrip = ?, Wintersport = ?, Natuur = ?, Cultuur = ?, Welkom_bericht = ?, Historie = ?, Wat_te_doen = ?, kaart_afbeelding = ? WHERE Reis_id = $id";
+    $sqlupdate = " UPDATE Reizen SET Bestemming = ?, Land = ?, korte_beschrijving = ?, Prijs = ?, Vlag = ?, Continent = ?, Strand_en_zon = ?, Stedentrip = ?, Wintersport = ?, Natuur = ?, Cultuur = ?, Welkom_bericht = ?, Historie = ?, Wat_te_doen = ?, kaart_afbeelding = ? WHERE Reis_id = ?";
 
     $updatestatement = $pdo->prepare($sqlupdate);
     $updatestatement->bindParam(1, $_POST['bestemming']);
@@ -58,6 +58,7 @@ $id = $_POST['id'];
     $updatestatement->bindParam(13, $_POST['historie']);
     $updatestatement->bindParam(14, $_POST['wattedoen']);
     $updatestatement->bindParam(15, $_POST['kaartafbeelding']);
+    $updatestatement->bindParam(16, $id);
 
     $updatestatement->execute();
 }

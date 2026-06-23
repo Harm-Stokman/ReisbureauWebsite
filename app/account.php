@@ -42,7 +42,7 @@ if (isset($_GET['id'])) {
         <?php
         include_once 'includes/header.php';
 
-        $usersql = "SELECT * FROM Gebruikers 
+        $usersql = "SELECT Gebruikersnaam, Emailadres FROM Gebruikers 
         WHERE User_id = ?";
 
         $userstatement = $pdo->prepare($usersql);
@@ -50,7 +50,7 @@ if (isset($_GET['id'])) {
         $userstatement->execute();
         $user = $userstatement->fetch();
 
-        $id = $user['User_id'];
+        $id = $_SESSION['user_id'];
 
         ?>
 
