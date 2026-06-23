@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $query = "SELECT * FROM Gebruikers 
+        $query = "SELECT Gebruikersnaam, Wachtwoord, User_id FROM Gebruikers 
         WHERE Gebruikersnaam = ?";
 
         $userstatement = $pdo->prepare($query);

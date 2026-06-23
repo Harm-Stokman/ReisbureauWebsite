@@ -58,7 +58,7 @@ if (isset($_POST['boeken'])) {
 }
 
 
-$sqlreis = "SELECT * FROM Reizen WHERE Reis_id = ?";
+$sqlreis = "SELECT Bestemming, Reis_id, Prijs FROM Reizen WHERE Reis_id = ?";
 $reisstatement = $pdo->prepare($sqlreis);   // Maak verbinding met de database en bereid de SQL statement voor
 $reisstatement->bindParam(1, $_GET['id']);  // Krijg ID van de link waar je op hebt geklikt (bindParam als placeholder)
 $reisstatement->execute();                  // Voer de SQL statement uit

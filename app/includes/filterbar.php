@@ -15,7 +15,7 @@
             //  Exacute SQL statement
             $statement->execute();   
         } else {
-            $sql = 'SELECT * FROM Reizen WHERE Continent = :continent AND ' . $typevacation . ' = 1' ;
+            $sql = 'SELECT * FROM Reizen WHERE Continent = :continent AND '. $typevacation .' = 1';
             $statement = $pdo->prepare($sql);
             $statement->bindParam(":continent", $continent);
             $statement->execute();
