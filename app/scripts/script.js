@@ -1,3 +1,4 @@
+//
 function displayPeople(formdata) {
     let data = document.getElementById(formdata);
     // window.alert(data.value);
@@ -21,6 +22,7 @@ function calculatePrice(amount) {
     // window.alert(document.getElementById("prijs").value);
 }
 
+//
 function showPassword() {
     if (document.getElementById("pass").type == "password") {
         document.getElementById("pass").type = "text";
@@ -29,3 +31,12 @@ function showPassword() {
     }
 }
 
+//
+function logoutConfirmation() {
+    if (confirm("Weet u zeker dat u wilt uitloggen?")) {
+        console.log("Getting loged out...");
+        window.location.href = "logout.php";
+    } else {
+        console.log("Staying logged in.");
+    }
+}
