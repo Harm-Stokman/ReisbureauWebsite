@@ -73,7 +73,7 @@ header a {
     align-items: center;
 }
 
-.buttons a {
+.buttons button {
     background: var(--red);
     height: 25px;
     width: 75px;
@@ -81,14 +81,15 @@ header a {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--sand);
 }
 
-header a:hover {
+header button:hover {
     color: var(--sand);
     transition-duration: 0.3s;
 }
 
-.buttons a:hover {
+.buttons button:hover {
     background: var(--dark_blue);
     transition-duration: 0.3s;
 }
