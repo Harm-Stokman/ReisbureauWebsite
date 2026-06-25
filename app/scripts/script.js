@@ -34,9 +34,8 @@ function showPassword() {
 //
 function logoutConfirmation() {
     if (confirm("Weet u zeker dat u wilt uitloggen?")) {
-        console.log("Getting loged out...");
         window.location.href = "logout.php";
     } else {
-        console.log("Staying logged in.");
+        // Do nothing.
     }
 }

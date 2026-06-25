@@ -149,18 +149,25 @@ $reis = $reisstatement->fetch();
     </main>
 
     <script>
+        console.log("goBackToTopButton");
+
         const goBackToTopButton = document.getElementById("goBackToTop");
 
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 200) {
+        document.addEventListener("scroll", () => {
+            console.log("scrolling");
+            scrollFunc();
+        });
+
+        function scrollFunc() {
+            if (window.scrollY > 300) {
                 goBackToTopButton.classList.add("show");
             } else {
                 goBackToTopButton.classList.remove("show");
             }
-        });
+        }
 
         goBackToTopButton.addEventListener("click", () => {
-            window.scrollTo({
+            window.scroll({
                 top: 0,
                 behavior: "smooth"
             });
