@@ -155,34 +155,8 @@ include_once 'includes/pdo.php';
             <?php } ?>
             <a href="allreviews.php"><button class="action-button">Zie alle reviews</button></a>
         </div>
-        <button class="go-to-top-button" id="goBackToTop">↑</button>
+        <button class="go-to-top-button" id="goBackToTop" onclick="goToTopFunction()">↑</button>
     </main>
-
-    <script>
-        console.log("goBackToTopButton");
-
-        const goBackToTopButton = document.getElementById("goBackToTop");
-
-        document.addEventListener("scroll", () => {
-            console.log("scrolling");
-            scrollFunc();
-        });
-
-        function scrollFunc() {
-            if (window.scrollY > 300) {
-                goBackToTopButton.classList.add("show");
-            } else {
-                goBackToTopButton.classList.remove("show");
-            }
-        }
-
-        goBackToTopButton.addEventListener("click", () => {
-            window.scroll({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-    </script>
 
     <footer>
 

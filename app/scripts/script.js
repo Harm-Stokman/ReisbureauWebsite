@@ -39,3 +39,20 @@ function logoutConfirmation() {
         // Do nothing.
     }
 }
+
+//
+const goBackToTopButton = document.getElementById("goBackToTop");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        goBackToTop.style.display = "block";
+    } else {
+        goBackToTop.style.display = "none";
+    }
+}
+
+function goToTopFunction() {
+    document.documentElement.scrollTop = 0;
+}
