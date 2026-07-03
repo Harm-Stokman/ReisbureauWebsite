@@ -31,26 +31,12 @@ function showPassword() {
     }
 }
 
-// Logout confirmation
+//
 function logoutConfirmation() {
-    if (confirm("Weet u zeker dat u wilt uitloggen?")) {    // Laat popup zien en vraag of de user wilt uitloggen
+    if (confirm("Weet u zeker dat u wilt uitloggen?")) {
+        console.log("Getting loged out...");
         window.location.href = "logout.php";
-    }
-}
-
-// Go back to top
-const goBackToTopButton = document.getElementById("goBackToTop");
-
-window.onscroll = function() {scrollFunction()};    // Voer scrollFuntcion uit wanneer er word gescrolt
-
-function scrollFunction() {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) { // Laat button zien als je 200px naar beneden scrolt
-        goBackToTop.style.display = "block";
     } else {
-        goBackToTop.style.display = "none";
+        console.log("Staying logged in.");
     }
-}
-
-function goToTopFunction() {    // Scroll naar de top van de huidige pagina
-    document.documentElement.scrollTop = 0;
 }
