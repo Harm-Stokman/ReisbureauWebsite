@@ -164,6 +164,10 @@ header button:hover {
     align-items: center;
 }
 
+.search-button a {
+    color: var(--sand);
+}
+
 .search-button:hover {
     background: var(--dark_red);
     color: var(--sand);
@@ -1127,7 +1131,10 @@ footer p {
         width: 100px;
         border-radius: 15px;
         font-size: 12px;
+        color: var(--sand);
+        text-decoration: none;
     }
+
 
     .destinations-flex {
         display: flex;
@@ -1446,6 +1453,8 @@ footer p {
         font-size: 10px;
         width: 100%;
     }
+
+    
 
     .footer {
         justify-content: center;
