@@ -1,10 +1,6 @@
 /* ======================================================================================= */
 /* ======================================   BODY   ======================================= */
 /* ======================================================================================= */
-html {
-    scroll-behavior: smooth;
-}
-
 :root {
     --background: #FFFCF7;
     --sand: #FFF0D6;
@@ -332,23 +328,12 @@ header button:hover {
 .go-to-top-button {
     visibility: hidden;
     opacity: 0;
-#goBackToTop {
-  position: fixed;
-  bottom: 75px;
-  right: 30px;
-  background-color: var(--dark_red);
-  color: var(--sand);
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 12px;
-  transition-duration: 0.5s;
 }
 
-#goBackToTop:hover {
-  background-color: var(--dark_blue);
-  cursor: pointer;
-  color: var(--background);
-  transition-duration: 0.3s;
+.go-to-top-button.show:hover {
+    cursor: pointer;
+    background: var(--red);
+    transition-duration: 0.3s;
 }
 
 
