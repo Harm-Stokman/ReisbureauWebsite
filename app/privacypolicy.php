@@ -95,27 +95,8 @@ include_once 'includes/pdo.php';
                 <p>Bij grote wijzigingen zullen we waarschijnlijk vergeten erover te berichten, of gewoon hopen dat niemand het merkt.</p>
             </div>
         </div>
-        <button class="go-to-top-button" id="goBackToTop">↑</button>
+        <button class="go-to-top-button" id="goBackToTop" onclick="goToTopFunction()">↑</button>
     </main>
-
-    <script>
-        const goBackToTopButton = document.getElementById("goBackToTop");
-
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 200) {
-                goBackToTopButton.classList.add("show");
-            } else {
-                goBackToTopButton.classList.remove("show");
-            }
-        });
-
-        goBackToTopButton.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-    </script>
 
     <footer>
         <?php
