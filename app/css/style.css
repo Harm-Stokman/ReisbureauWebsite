@@ -29,13 +29,12 @@ body a {
 /* ======================================================================================= */
 header {
     background: var(--dark_red);
-    border: 10px solid var(--dark_red);
     border-radius: 0 0 20px 20px;
     height: auto;
     color: var(--background);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     box-shadow: var(--gunpowder) 0px 10px 20px -10px;
     position: relative;
     z-index: 2;
@@ -51,13 +50,18 @@ header img {
 }
 
 header ul {
-    margin: 50px;
     list-style: none;
-    gap: 50px;
+    gap: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-size: 18px;
+}
+
+.header-links {
+    margin: 50px, 0, 50px, 0;
+    justify-items: center;
+    width: 40%;
 }
 
 header a {
@@ -144,15 +148,15 @@ header button:hover {
     background: var(--sand);
     color: var(--gunpowder);
     font-size: 15px;
-    height: 30px;
-    width: auto;
+    height: 100px;
+    width: 10%;
     border-radius: 10px;
 }
 
-.search-button a {
+.search-button {
     background: var(--dark_blue);
     color: var(--background);
-    max-width: 150px;
+    width: 10%;
     padding: 5px;
     border-radius: 25px;
     display: flex;
@@ -160,7 +164,7 @@ header button:hover {
     align-items: center;
 }
 
-.search-button a:hover {
+.search-button:hover {
     background: var(--dark_red);
     color: var(--sand);
     transition-duration: 0.3s;
@@ -170,7 +174,7 @@ header button:hover {
     display: grid;
     grid-template-rows: auto auto;
     grid-template-columns: 1fr 1fr;
-    gap: 25px;
+    gap: 10px;
     background: var(--sand);
     margin-bottom: 30px;
 }
@@ -178,11 +182,13 @@ header button:hover {
 .one-destination {
     background: var(--background);
     gap: 10px;
+    width: 90%;
+    justify-self: center;
 }
 
 .image-label img {
-    width: 550px;
-    height: 210px;
+    width: 100%;
+    height: 200px;
     position: relative;
     z-index: 1;
 }
@@ -208,8 +214,8 @@ header button:hover {
     color: var(--background);
     padding: 5px;
     border-radius: 25px;
-    font-size: 22px;
-    max-width: 250px;
+    font-size: 1rem;
+    width: 80%;
     text-align: center;
 }
 
@@ -222,8 +228,7 @@ header button:hover {
 }
 
 .vlag-prijs img {
-    width: 100px;
-    height: 70px;
+    width: 70%;
     border: 1px solid var(--gunpowder);
     border-radius: 10px;
 }
@@ -244,6 +249,7 @@ header button:hover {
 }
 
 .destinations-index {
+    width: 100%;
     background: var(--sand);
     display: flex;
     justify-content: center;
@@ -268,7 +274,7 @@ header button:hover {
     align-items: center;
     gap: 20px;
     color: var(--background);
-    padding: 5px;  
+    padding: 5px;
 }
 
 .review-header {
@@ -321,7 +327,7 @@ header button:hover {
 
 .go-to-top-button {
     visibility: hidden;
-    opacity:0;
+    opacity: 0;
 }
 
 .go-to-top-button.show:hover {
@@ -459,8 +465,8 @@ header button:hover {
     font-size: 10px;
 }
 
-.searchbar {
-    gap: 20px;
+.form_searchbar {
+    gap: 2%;
     position: relative;
     text-align: center;
     display: flex;
@@ -473,7 +479,7 @@ header button:hover {
     color: var(--gunpowder);
     font-size: 15px;
     height: 30px;
-    width: auto;
+    width: 30%;
     border-radius: 10px;
 }
 
@@ -1005,11 +1011,12 @@ footer {
     position: relative;
     z-index: 2;
     margin-top: 30px;
+    bottom: 0;
 }
 
 .footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     height: 50px;
 }
@@ -1059,12 +1066,14 @@ footer p {
 /* ==================================   RESPONSIVENESS   ================================= */
 /* ======================================================================================= */
 
-@media (max-width: 500px) {
+@media (max-width: 900px) {
+
     /* -------------------------------------------------- HEADER --------------------------------------------------- */
     header {
+        border-radius: 0px;
         height: 100px;
-        width: 96%;
-        justify-content: flex-start;
+        width: 100%;
+        justify-content: space-around;
     }
 
     header img {
@@ -1090,6 +1099,7 @@ footer p {
     /* ---------------------------------------------------- INDEX --------------------------------------------------- */
     .index-header {
         min-height: 300px;
+        width: 100%;
     }
 
     .title-block {
@@ -1100,20 +1110,21 @@ footer p {
     }
 
     .find-vacations {
-        width: 400px;
-        height: 50px;
+        width: 90%;
+        height: 10%;
         border-radius: 8px;
     }
 
     .dropdown-selection {
         font-size: 12px;
-        height: 25px;
+        width: 10%;
+        height: 10%;
         border-radius: 8px;
     }
 
     .search-button a {
         padding: 3px;
-        max-width: 100px;
+        width: 100px;
         border-radius: 15px;
         font-size: 12px;
     }
@@ -1127,9 +1138,13 @@ footer p {
         margin-bottom: 30px;
     }
 
+    .one-destination {
+        width: 70%;
+    }
+
     .image-label img {
-        width: 350px;
-        height: 140px;
+        width: 100%;
+        height: 20%;
     }
 
     .text-info-bestemming p {
@@ -1144,8 +1159,7 @@ footer p {
     }
 
     .vlag-prijs img {
-        width: 70px;
-        height: 50px;
+        width: 50%;
         border-radius: 8px;
     }
 
@@ -1160,13 +1174,22 @@ footer p {
         max-width: 100px;
         border-radius: 12px;
         padding: 3px;
-        font-size: 12px;  
+        font-size: 12px;
     }
 
     .action-button {
         min-width: 120px;
         height: 30px;
         font-size: 18px;
+    }
+
+    .reviews-index {
+        justify-self: center;
+        width: 90%;
+    }
+
+    .one-review {
+        width: 95%;
     }
 
     /* -------------------------------------------- ALLE REIZEN ------------------------------------------------ */
@@ -1183,10 +1206,6 @@ footer p {
 
     .specific-search {
         margin-top: 0px;
-    }
-
-    .searchbar {
-        gap: 15px;
     }
 
     .searchbar form {
@@ -1219,6 +1238,17 @@ footer p {
         align-items: center;
         flex-direction: column;
         gap: 15px;
+    }
+
+
+
+
+    .specific-search {
+        align-self: center;
+    }
+
+    .specific-search form {
+        width: 100%;
     }
 
     /* ---------------------------------------------- REIS INFO ------------------------------------------------ */
@@ -1314,7 +1344,7 @@ footer p {
     .prijs-boeken p {
         font-size: 10px;
     }
-    
+
     /* ---------------------------------------------- FOOTER ------------------------------------------------ */
     footer {
         margin-top: 20px;
@@ -1337,4 +1367,95 @@ footer p {
     footer p {
         font-size: 8px;
     }
+}
+
+@media (max-width: 400px) {
+
+    body {
+        width: 100%;
+    }
+
+    .header-links ul {
+        font-size: 10px;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .buttons {
+        width: 20%;
+    }
+
+    .buttons button {
+        font-size: 9px;
+        height: auto;
+        width: 100%;
+    }
+    
+    .buttons a {
+        height: auto;
+    }
+
+
+    .index-label {
+        font-size: 9px;
+        height: 10px;
+    }
+
+    
+    .title-block {
+        width: 50%;
+        text-align: center;
+    }
+
+    .review-header, .one-review p, .review-info {
+        font-size: 11px;
+    }
+
+    .text-info-bestemming p {
+        display: none;
+    }
+
+    .text-info-bestemming {
+        width: 50%;
+    }
+
+
+    .titel-bestemming {
+        font-size: 12px;
+        width: 90%;
+    }
+
+    .find-vacations {
+        justify-self: center;
+    }
+
+    .form_searchbar {
+        width: 100%;
+    }
+
+    .searchbar {
+        width: 100%;
+    }
+
+    .dropdown-selection {
+        font-size: 9px;
+        width: 100%;
+    }
+
+    .searchbar .search-button {
+        font-size: 10px;
+        width: 100%;
+    }
+
+    .footer {
+        justify-content: center;
+    }
+
+    .go-to-top-button.show {
+        width: 30px;
+        height: 30px;
+        padding: 0;
+    }
+
+
 }

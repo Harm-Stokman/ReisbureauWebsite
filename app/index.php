@@ -33,7 +33,7 @@ include_once 'includes/pdo.php';
             <div class="all-index-header">
                 <span class="title-block">Vind jou vakantie</span>
                 <div class="find-vacations">
-                    <form class="searchbar" method="get" name="filterbar" action="reizen.php">
+                    <form class="form_searchbar" method="get" name="filterbar" action="reizen.php">
                         <select class="dropdown-selection" name="typevacation">
                             <option value="">Type vakantie</option>
                             <option value="Strand_en_zon">Strand en zon</option>
