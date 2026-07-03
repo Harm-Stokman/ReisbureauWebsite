@@ -41,16 +41,16 @@ function logoutConfirmation() {
 // Go back to top
 const goBackToTopButton = document.getElementById("goBackToTop");
 
-window.onscroll = function() {scrollFunction()};    // Voer scrollFuntcion uit wanneer er word gescrolt.
+window.onscroll = function() {scrollFunction()};    // Voer scrollFuntcion uit wanneer er word gescrolt
 
 function scrollFunction() {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) { // Laat button zien als je 200px naar beneden scrolt.
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) { // Laat button zien als je 200px naar beneden scrolt
         goBackToTop.style.display = "block";
     } else {
         goBackToTop.style.display = "none";
     }
 }
 
-function goToTopFunction() {    // Scroll naar de top van de huidige pagina.
+function goToTopFunction() {    // Scroll naar de top van de huidige pagina
     document.documentElement.scrollTop = 0;
 }
